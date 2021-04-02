@@ -50,6 +50,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
  *    14.4 - >= 985px
  *    14.5 - >= 1200px
  * 15.0 - Print
+ * 16.0 - New styles
  */
 
 
@@ -822,7 +823,8 @@ a:active {
 }
 
 .main-navigation a {
-	color: #1a1a1a;
+	font-weight: bold;
+	color: white;
 	display: block;
 	line-height: 1.3125;
 	outline-offset: -1px;
@@ -831,7 +833,7 @@ a:active {
 
 .main-navigation a:hover,
 .main-navigation a:focus {
-	color: #007acc;
+	color: #e6c619;
 }
 
 .main-navigation .current-menu-item > a,
@@ -1565,7 +1567,6 @@ blockquote:after,
 
 .site-content {
 	word-wrap: break-word;
-	padding-top: 105px !important;
 }
 
 /* Do not show the outline on the skip link target. */
@@ -1589,6 +1590,9 @@ blockquote:after,
 .site-header {
 	padding: 0 7.6923%;
 	background-color: black;
+	position: fixed;
+	width: 100%;
+	z-index: 5;
 }
 
 .site-header-main {
@@ -1601,6 +1605,8 @@ blockquote:after,
 	-webkit-flex-wrap: wrap;
 	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
+	max-width: 1320px;
+	margin: 0 auto;
 }
 
 .site-branding {
@@ -1629,7 +1635,7 @@ blockquote:after,
 }
 
 .site-branding .site-title a {
-	color: #7d7d7d;
+	color: #e6c619;
 }
 
 .site-branding .site-title a:hover,
@@ -1654,7 +1660,7 @@ blockquote:after,
 .menu-toggle {
 	background-color: transparent;
 	border: 1px solid #d1d1d1;
-	color: #1a1a1a;
+	color: white;
 	font-size: 13px;
 	font-size: 0.8125rem;
 	margin: 1.076923077em 0;
@@ -1668,8 +1674,8 @@ blockquote:after,
 .menu-toggle:hover,
 .menu-toggle:focus {
 	background-color: transparent;
-	border-color: #007acc;
-	color: #007acc;
+	border-color: #e6c632;
+	color: #e6c632;
 }
 
 .menu-toggle.toggled-on,
@@ -1723,8 +1729,8 @@ blockquote:after,
 .entry-title {
 	font-family: Montserrat, "Helvetica Neue", sans-serif;
 	font-size: 28px;
-	font-size: 1.75rem;
-	font-weight: 700;
+	font-size: 1.2rem;
+	font-weight: normal;
 	line-height: 1.25;
 	margin-bottom: 1em;
 }
@@ -1740,7 +1746,6 @@ blockquote:after,
 
 .post-thumbnail {
 	display: block;
-	margin: 0 7.6923% 1.75em;
 }
 
 .post-thumbnail img {
@@ -2005,6 +2010,7 @@ body:not(.search-results) .entry-summary > :last-child,
 }
 
 .entry-footer {
+	display: flex;
 	color: #686868;
 	font-family: Montserrat, "Helvetica Neue", sans-serif;
 	font-size: 13px;
@@ -2776,6 +2782,10 @@ p > video {
  */
 
 @media screen and (min-width: 44.375em) {
+	:not(body).site-content {
+		padding-top: 100px;
+	}
+
 	body:not(.custom-background-image):before,
 	body:not(.custom-background-image):after {
 		background: inherit;
@@ -2811,6 +2821,9 @@ p > video {
 	.site-header {
 		/*padding: 3.9375em 7.6923%;*/
 		padding: 0 7.6923%;
+		position: fixed;
+		z-index: 2;
+		width: calc(100% - 5.4%);
 	}
 
 	.site-branding {
@@ -2893,7 +2906,9 @@ p > video {
 	.page-header,
 	.page-content,
 	.content-bottom-widgets {
-		margin-right: 23.0769%;
+		/* TODO: Latter Responsive */
+		/* margin-right: 23.0769%; */
+		margin-right: 0%;
 	}
 
 	.entry-title {
@@ -3055,7 +3070,7 @@ p > video {
 
 	.main-navigation li:hover > a,
 	.main-navigation li.focus > a {
-		color: #007acc;
+		color: #e6c619;
 	}
 
 	.main-navigation ul ul {
@@ -3455,7 +3470,7 @@ p > video {
 	.site-header {
 		position: fixed;
 		z-index: 2;
-		width: calc(100% - 3.1%);
+		width: calc(100% - 4%);
 		padding: 0 4.5455%;
 	}
 
@@ -3486,13 +3501,10 @@ p > video {
 		margin-bottom: 4.307692308em;
 	}
 
-	.site-main > article {
-		margin-bottom: 7.0em;
-	}
-
 	.entry-title {
+		font-weight: normal;
 		font-size: 40px;
-		font-size: 2.5rem;
+		font-size: 1.5rem;
 		line-height: 1.225;
 		margin-bottom: 1.05em;
 	}
@@ -3510,10 +3522,6 @@ p > video {
 		font-size: 1.4375em;
 		line-height: 1.304347826;
 		margin-bottom: 1.826086957em;
-	}
-
-	.post-thumbnail {
-		margin-bottom: 2.625em;
 	}
 
 	.entry-content h1,
@@ -3595,8 +3603,8 @@ p > video {
 	}
 
 	body:not(.search-results) article:not(.type-page) .entry-content {
-		float: right;
-		width: 71.42857144%;
+		/* float: right; */
+		width: 100%;
 	}
 
 	body:not(.search-results) article:not(.type-page) .entry-content > blockquote.alignleft.below-entry-meta {
@@ -3625,7 +3633,7 @@ p > video {
 	body:not(.search-results) article:not(.type-page) .entry-footer {
 		float: left;
 		margin-top: 0.1538461538em;
-		width: 21.42857143%;
+		width: 100%;
 	}
 
 	body:not(.search-results) article:not(.type-page) .entry-footer > span:not(:last-child):after {
@@ -3653,7 +3661,7 @@ p > video {
 		display: block;
 		height: auto;
 		margin: 0 0 0.5384615385em;
-		width: 49px;
+		width: 96px;
 	}
 
 	body.no-sidebar:not(.search-results) article:not(.type-page) .entry-content {
@@ -3676,6 +3684,14 @@ p > video {
  */
 
 @media screen and (min-width: 75em) {
+	.site-header {
+		width: 100%;
+		position: fixed;
+		z-index: 2;
+		width: calc(100% - 3.07%);
+		padding: 0 4.5455%;
+	}
+
 	body:not(.search-results) .entry-summary {
 		font-size: 23px;
 		font-size: 1.4375rem;
@@ -3792,6 +3808,28 @@ p > video {
 		margin-bottom: 1.5217391304em;
 	}
 }
+
+/**
+ * 14.6 - >= 1440px
+ */
+
+ @media screen and (min-width: 90em) {
+	.site-header {
+		top: 20px;
+		width: calc(100% - 2.9%);
+	}
+ }
+
+/**
+ * 14.7 - >= 1920px
+ */
+
+ @media screen and (min-width: 120em) {
+	.site-header {
+		top: 20px;
+		width: calc(100% - 1.6%);
+	}
+ }
 
 
 /**
@@ -4030,4 +4068,147 @@ p > video {
 	.widecolumn {
 		padding: 0;
 	}
+}
+
+/**
+ * 16.0 New Styles
+ */
+
+.only-mobile {
+	display: block;
+}
+
+.line-separator {
+	border-bottom: 4px solid #e6c619
+}
+
+article.line-separator {
+	border-bottom: 0;
+}
+
+.box-separator-mobile {
+	margin: 20px 15px 0 15px;
+}
+
+.line-separator-mobile {
+	border-bottom: 2px solid black;
+}
+
+.site-content {
+	padding-top: 64px;
+}
+
+footer .main-navigation {
+	display: none !important;
+}
+
+/**
+ * 16.1 Home
+ */
+body.home post-title-excerpt.sourcevortex {
+	position: relative;
+}
+
+body.home .category-box {
+	font-family: 'Montserrat';
+	font-size: 0.8em;
+	position: absolute;
+	display: inline-block;
+	background-color: #e6c619;
+	padding: 3px 10px;
+	bottom: 0;
+	left: 5px;
+	color: black;
+	text-transform: uppercase;
+}
+
+body.home .entry-summary {
+	font-size: 0.9em !important;
+	font-weight: normal im !important;
+}
+
+body.home .post-thumbnail-container {
+	position: relative;
+}
+
+body.home .entry-title {
+	margin-top: 15px;
+}
+
+body.home .posted-on {
+	display: none;
+}
+
+body.home .entry-footer > span:not(:last-child):after {
+	content: '';
+}
+
+/**
+ * >= 1200px
+ */
+@media screen and (min-width: 75em) {
+	article.line-separator {
+		border-bottom: 4px solid #e6c619
+	}
+
+	.box-separator-mobile {
+		display: none;
+	}
+
+	.only-mobile {
+		display: none;
+	}
+
+	.site-content {
+		padding-top: 105px;
+	}
+
+	body.home .post-thumbnail {
+		width: 400px;
+	}
+
+	body.home .entry-title {
+		margin-top: 0;
+	}
+
+	footer.entry-footer.sourcevortex {
+		position: absolute;
+		bottom: 5px;
+	}
+
+	.post-thumbnail-container {
+		margin-right: 20px;
+	}
+
+	.post-box {
+		display: flex;
+	}
+}
+
+/**
+ * 16.2 Post
+ */
+.post-intern-thumbnail-container {
+	position: relative;
+	border-bottom: 4px solid #e6c619;
+	margin-bottom: 30px;
+}
+
+.post-intern-thumbnail-container .category-box {
+	position: absolute;
+	left: 5px;
+	bottom: 0;
+	font-family: 'Montserrat';
+	font-size: 0.8em;
+	display: inline-block;
+	background-color: #e6c619;
+	padding: 3px 10px;
+	color: black;
+	text-transform: uppercase;
+}
+
+
+footer.entry-footer.post-sourcevortex {
+	margin-top: 120px !important;
+	float: none !important;
 }

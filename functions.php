@@ -402,7 +402,6 @@ function twentysixteen_scripts() {
 
 	// Custom
     wp_enqueue_style( 'twentysixteen-prism', get_template_directory_uri() . '/css/prism.css', array( 'twentysixteen-style' ), '20210313' );
-    wp_enqueue_script( 'sourcevortex-theme-prims-badge', get_template_directory_uri() . '/js/prism-badge.js', array( 'jquery' ), '20210313'  );
 
 	// Load the html5 shiv.
 	wp_enqueue_script( 'twentysixteen-html5', get_template_directory_uri() . '/js/html5.js', array(), '3.7.3' );

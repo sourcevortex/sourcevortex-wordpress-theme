@@ -15,9 +15,12 @@
 
 	<?php twentysixteen_excerpt(); ?>
 
-	<?php twentysixteen_post_thumbnail(); ?>
+	<div class="post-intern-thumbnail-container">
+		<?php twentysixteen_post_thumbnail(); ?>
+		<?php twentysixteen_get_first_category() ?>
+	</div>
 
-	<div class="entry-content">
+	<div class="entry-content post-sourcevortex">
 		<?php
 			the_content();
 
@@ -38,18 +41,19 @@
 			?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
+	<footer class="entry-footer post-sourcevortex">
 		<?php twentysixteen_entry_meta(); ?>
 		<?php
-			edit_post_link(
-				sprintf(
-					/* translators: %s: Post title. */
-					__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'twentysixteen' ),
-					get_the_title()
-				),
-				'<span class="edit-link">',
-				'</span>'
-			);
+			// edit_post_link(
+			// 	sprintf(
+			// 		/* translators: %s: Post title. */
+			// 		__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'twentysixteen' ),
+			// 		get_the_title()
+			// 	),
+			// 	'<span class="edit-link">',
+			// 	'</span>'
+			// );
 			?>
 	</footer><!-- .entry-footer -->
+	<div class="line-separator"></div>
 </article><!-- #post-<?php the_ID(); ?> -->

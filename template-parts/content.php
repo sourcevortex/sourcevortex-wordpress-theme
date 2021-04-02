@@ -44,7 +44,7 @@
 			?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
+	<footer class="entry-footer post-sourcevortex">
 		<?php twentysixteen_entry_meta(); ?>
 		<?php
 			edit_post_link(

@@ -17,20 +17,35 @@ if ( ! function_exists( 'twentysixteen_entry_meta' ) ) :
 	 *
 	 * @since Twenty Sixteen 1.0
 	 */
-	function twentysixteen_entry_meta() {
+	function twentysixteen_entry_meta( $reader_mode = true, $show_taxonomies = false ) {
 		if ( 'post' === get_post_type() ) {
-			$author_avatar_size = apply_filters( 'twentysixteen_author_avatar_size', 49 );
-			printf(
-				'<span class="byline"><span class="author vcard">%1$s<span class="screen-reader-text">%2$s </span> <a class="url fn n" href="%3$s">%4$s</a></span></span>',
-				get_avatar( get_the_author_meta( 'user_email' ), $author_avatar_size ),
-				_x( 'Author', 'Used before post author name.', 'twentysixteen' ),
-				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-				get_the_author()
-			);
+
+			// TODO: Translate
+			if ( $reader_mode ) {
+				$author_avatar_size = apply_filters( 'twentysixteen_author_avatar_size', 96 );
+				printf(
+					'<span class="byline"><span class="author vcard">%1$s<span class="screen-reader-text">%2$s </span>%3$s <a class="url fn n" href="%4$s">%5$s</a></span>%6$s %7$s </span>',
+					get_avatar( get_the_author_meta( 'user_email' ), $author_avatar_size ),
+					_x( 'Author', 'Used before post author name.', 'twentysixteen' ),
+					_x( 'Por', 'Escrito por', 'twentysixteen' ),
+					esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+					get_the_author(),
+					_x( ', em', '', 'twentysixteen' ),
+					twentysixteen_entry_date()
+				);
+			} else {
+				printf(
+					'<span class="byline"><span class="author vcard"><span class="screen-reader-text">%1$s </span>%2$s <a class="url fn n" href="%3$s">%4$s</a></span></span>',
+					_x( 'Author', 'Used before post author name.', 'twentysixteen' ),
+					_x( 'Por', 'Escrito por', 'twentysixteen' ),
+					esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+					get_the_author()
+				);
+			}
 		}
 
-		if ( in_array( get_post_type(), array( 'post', 'attachment' ), true ) ) {
-			twentysixteen_entry_date();
+		if ( in_array( get_post_type(), array( 'post', 'attachment' ), true ) && !$reader_mode ) {
+			twentysixteen_entry_date( true );
 		}
 
 		$format = get_post_format();
@@ -43,7 +58,7 @@ if ( ! function_exists( 'twentysixteen_entry_meta' ) ) :
 			);
 		}
 
-		if ( 'post' === get_post_type() ) {
+		if ( 'post' === get_post_type() && $show_taxonomies ) {
 			twentysixteen_entry_taxonomies();
 		}
 
@@ -64,7 +79,7 @@ if ( ! function_exists( 'twentysixteen_entry_date' ) ) :
 	 *
 	 * @since Twenty Sixteen 1.0
 	 */
-	function twentysixteen_entry_date() {
+	function twentysixteen_entry_date( $return_time = false ) {
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
@@ -79,13 +94,37 @@ if ( ! function_exists( 'twentysixteen_entry_date' ) ) :
 			get_the_modified_date()
 		);
 
+		// TODO: Translate
+		if ( $return_time ) {
+			printf(
+				'<span class="posted-on"><span class="screen-reader-text">%1$s </span><a href="%2$s" rel="bookmark">%3$s %4$s</a></span>',
+				_x( 'Posted on', 'Used before publish date.', 'twentysixteen' ),
+				esc_url( get_permalink() ),
+				_x( ', em', '', 'twentysixteen' ),
+				$time_string
+			);
+		} else {
+			return $time_string;
+		}
+	}
+endif;
+
+if ( ! function_exists( 'twentysixteen_get_first_category' ) ) :
+
+	function twentysixteen_get_first_category() {
+		$categories = get_the_category();
+
+		// TODO: Use translate
+		$first_category = isset($categories[0]) ? $categories[0] : 'Sem categoria';
+
 		printf(
-			'<span class="posted-on"><span class="screen-reader-text">%1$s </span><a href="%2$s" rel="bookmark">%3$s</a></span>',
-			_x( 'Posted on', 'Used before publish date.', 'twentysixteen' ),
-			esc_url( get_permalink() ),
-			$time_string
+			'<a href="/category/%1$s" class="category-box">%2$s</a>',
+			$first_category->slug,
+			$first_category->cat_name
 		);
 	}
+
+
 endif;
 
 if ( ! function_exists( 'twentysixteen_entry_taxonomies' ) ) :

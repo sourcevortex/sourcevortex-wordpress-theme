@@ -7,7 +7,10 @@
  * @since Twenty Sixteen 1.0
  */
 
+$show_next_previous = false;
+
 get_header(); ?>
+
 
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
@@ -31,7 +34,7 @@ get_header(); ?>
 						'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'twentysixteen' ),
 					)
 				);
-			} elseif ( is_singular( 'post' ) ) {
+			} elseif ( is_singular( 'post' ) && $show_next_previous ) {
 				// Previous/next post navigation.
 				the_post_navigation(
 					array(
