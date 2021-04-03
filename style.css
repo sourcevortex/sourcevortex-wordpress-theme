@@ -4098,18 +4098,45 @@ article.line-separator {
 	padding-top: 60px;
 }
 
+.not-found-img {
+	width: 280px;
+}
+
 footer .main-navigation {
 	display: none !important;
 }
 
 /**
- * 16.1 Home
+ * 16.1 Header
  */
-body.home post-title-excerpt.sourcevortex {
+.site-header-main {
+	align-items: center;
+}
+
+.site-branding .site-title a {
+	font-family: 'OriginTech';
+}
+
+.site-branding .site-title a:hover {
+	color: white;
+}
+
+.main-navigation .sub-menu li a {
+	color: black;
+}
+
+.main-navigation .sub-menu li a:hover {
+	color: #ccac00;
+}
+
+/**
+ * 16.2 Home Loop
+ */
+.home-loop post-title-excerpt.sourcevortex {
 	position: relative;
 }
 
-body.home .category-box {
+.home-loop .category-box {
 	font-family: 'Montserrat';
 	font-size: 0.8em;
 	position: absolute;
@@ -4122,24 +4149,25 @@ body.home .category-box {
 	text-transform: uppercase;
 }
 
-body.home .entry-summary {
+.home-loop .entry-summary {
 	font-size: 0.9em !important;
 	font-weight: normal im !important;
+	font-family: 'Montserrat';
 }
 
-body.home .post-thumbnail-container {
+.home-loop .post-thumbnail-container {
 	position: relative;
 }
 
-body.home .entry-title {
+.home-loop .entry-title {
 	margin-top: 15px;
 }
 
-body.home .posted-on {
+.home-loop .posted-on {
 	display: none;
 }
 
-body.home .entry-footer > span:not(:last-child):after {
+.home-loop .entry-footer > span:not(:last-child):after {
 	content: '';
 }
 
@@ -4163,11 +4191,11 @@ body.home .entry-footer > span:not(:last-child):after {
 		padding-top: 105px;
 	}
 
-	body.home .post-thumbnail {
+	.home-loop .post-thumbnail {
 		width: 400px;
 	}
 
-	body.home .entry-title {
+	.home-loop .entry-title {
 		margin-top: 0;
 	}
 
@@ -4177,7 +4205,10 @@ body.home .entry-footer > span:not(:last-child):after {
 	}
 
 	.post-thumbnail-container {
+		overflow: hidden;
 		margin-right: 20px;
+		max-height: 225px;
+		min-width: 400px;
 	}
 
 	.post-box {
@@ -4186,7 +4217,7 @@ body.home .entry-footer > span:not(:last-child):after {
 }
 
 /**
- * 16.2 Post
+ * 16.3 Post
  */
 .post-intern-thumbnail-container {
 	position: relative;
@@ -4207,8 +4238,36 @@ body.home .entry-footer > span:not(:last-child):after {
 	text-transform: uppercase;
 }
 
+.post-intern.entry-header h1 {
+	font-size: 2em;
+}
+
 
 footer.entry-footer.post-sourcevortex {
 	margin-top: 120px !important;
 	float: none !important;
+}
+
+/**
+ * 16.4 Elements (widgets, buttons, etc...)
+ */
+a {
+	color: #ccac00;
+}
+
+.entry-title a:hover,
+.entry-footer a:hover {
+	color: #ccac00;
+}
+
+button:hover {
+	background-color: #ccac00;
+}
+
+.pagination .prev:hover {
+	background-color: #ccac00;
+}
+
+.pagination .next:hover {
+	background-color: #ccac00;
 }

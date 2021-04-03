@@ -202,10 +202,10 @@ if ( ! function_exists( 'twentysixteen_excerpt' ) ) :
 	 *
 	 * @param string $class Optional. Class string of the div element. Defaults to 'entry-summary'.
 	 */
-	function twentysixteen_excerpt( $class = 'entry-summary' ) {
+	function twentysixteen_excerpt( $class = 'entry-summary', $consider_search = false ) {
 		$class = esc_attr( $class );
 
-		if ( has_excerpt() || is_search() ) :
+		if ( has_excerpt() || (is_search() && $consider_search) ) :
 			?>
 			<div class="<?php echo $class; ?>">
 				<?php the_excerpt(); ?>

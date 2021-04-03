@@ -7,7 +7,7 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'line-separator' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'home-loop line-separator' ); ?>>
 	<div class="post-box">
 		<div class="post-thumbnail-container">
 			<?php twentysixteen_post_thumbnail(); ?>
@@ -29,17 +29,6 @@
 
 			<footer class="entry-footer sourcevortex">
 				<?php twentysixteen_entry_meta( false ); ?>
-				<?php
-					// edit_post_link(
-					// 	sprintf(
-					// 		/* translators: %s: Post title. */
-					// 		__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'twentysixteen' ),
-					// 		get_the_title()
-					// 	),
-					// 	'<span class="edit-link">',
-					// 	'</span>'
-					// );
-					?>
 			</footer><!-- .entry-footer -->
 		</div>
 	</div>
