@@ -4074,6 +4074,10 @@ p > video {
  * 16.0 New Styles
  */
 
+.only-desktop {
+	display: none;
+}
+
 .only-mobile {
 	display: block;
 }
@@ -4107,14 +4111,88 @@ footer .main-navigation {
 }
 
 /**
+ * >= 985px
+ */
+ @media screen and (min-width: 61.5625em) {
+	.only-desktop {
+		display: unset;
+	}
+ }
+
+/**
+ * >= 1200px
+ */
+/* @media screen and (min-width: 75em) {
+	.only-desktop {
+		display: unset;
+	}
+} */
+
+/**
  * 16.1 Header
  */
+.mobile-search-container {
+	margin-bottom: 15px;
+}
+
+header .desktop-search-container {
+	position: relative;
+	min-width: 42px;
+	min-height: 42px;
+}
+
+header .only-desktop .search-form {
+	position: absolute;
+	top: 0;
+	right: 0;
+	min-width: 300px;
+	min-height: 42px;
+}
+
+header .only-desktop input[type="search"].search-field {
+	transition: width 0.2s;
+	width: 0;
+	height: 42px;
+	padding: 0;
+	border: 0;
+	position: absolute;
+    right: 45px;
+}
+
+header .only-desktop input[type="search"].search-field.toggle-search {
+    width: 300px;
+	border: 1px solid #d1d1d1;
+	padding: 0.625em 0.4375em;
+}
+
+.dropdown-toggle {
+	color: white;
+}
+
+.dropdown-toggle:hover, .dropdown-toggle:focus {
+	color: #ccac00;
+}
+
+.site-header {
+	padding: 0 10px;
+}
+
 .site-header-main {
 	align-items: center;
+	justify-content: space-between;
+}
+
+.site-branding {
+	margin-right: 0;
 }
 
 .site-branding .site-title a {
 	font-family: 'OriginTech';
+	font-weight: normal;
+}
+
+.site-branding .site-title a:active {
+	color: #e6c619;
 }
 
 .site-branding .site-title a:hover {
@@ -4122,11 +4200,37 @@ footer .main-navigation {
 }
 
 .main-navigation .sub-menu li a {
-	color: black;
+	color: white;
 }
 
 .main-navigation .sub-menu li a:hover {
 	color: #ccac00;
+}
+
+/**
+ * >= 985px
+ */
+@media screen and (min-width: 61.5625em) {
+	.main-navigation .sub-menu li a {
+		color: black;
+	}
+
+	.mobile-search-container {
+		display: none;
+	}
+}
+
+/**
+ * >= 1200px
+ */
+@media screen and (min-width: 75em) {
+	.site-branding .site-title a {
+		font-size: 2.1rem;
+	}
+
+	.site-branding {
+		margin-left: 50px;
+	}
 }
 
 /**
@@ -4260,7 +4364,9 @@ a {
 	color: #ccac00;
 }
 
-button:hover {
+button:hover,
+button:active,
+button:focus {
 	background-color: #ccac00;
 }
 

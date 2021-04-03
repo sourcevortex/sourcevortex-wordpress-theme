@@ -114,13 +114,24 @@ if ( ! function_exists( 'twentysixteen_get_first_category' ) ) :
 	function twentysixteen_get_first_category() {
 		$categories = get_the_category();
 
-		// TODO: Use translate
+		// TODO: Translate
 		$first_category = isset($categories[0]) ? $categories[0] : 'Sem categoria';
+		$category_slug = $first_category->slug;
+		$category_name = $first_category->cat_name;
+
+		$parent_category = $first_category->parent;
+
+		if ( $parent_category ) {
+			$tmp_parent = get_category( $parent_category );
+			$category_slug = $tmp_parent->slug;
+			$category_name = $tmp_parent->name;
+			unset( $tmp_parent );
+		}
 
 		printf(
 			'<a href="/category/%1$s" class="category-box">%2$s</a>',
-			$first_category->slug,
-			$first_category->cat_name
+			$category_slug,
+			$category_name
 		);
 	}
 
