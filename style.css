@@ -4135,6 +4135,11 @@ footer .main-navigation {
 	margin-bottom: 15px;
 }
 
+header .site-header-menu {
+	position: relative;
+	z-index: 1;
+}
+
 header .desktop-search-container {
 	position: relative;
 	min-width: 42px;
@@ -4160,6 +4165,7 @@ header .only-desktop input[type="search"].search-field {
 }
 
 header .only-desktop input[type="search"].search-field.toggle-search {
+	z-index: 2;
     width: 300px;
 	border: 1px solid #d1d1d1;
 	padding: 0.625em 0.4375em;
