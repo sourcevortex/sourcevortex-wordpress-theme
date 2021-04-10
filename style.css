@@ -4073,6 +4073,9 @@ p > video {
 /**
  * 16.0 New Styles
  */
+body {
+	font-family: 'Montserrat';
+}
 
 .only-desktop {
 	display: none;
@@ -4224,6 +4227,10 @@ header .only-desktop input[type="search"].search-field.toggle-search {
 	.mobile-search-container {
 		display: none;
 	}
+
+	.entry-summary p {
+		line-height: 1.3em;
+	}
 }
 
 /**
@@ -4281,6 +4288,11 @@ header .only-desktop input[type="search"].search-field.toggle-search {
 	content: '';
 }
 
+.home-loop .entry-footer,
+.home-loop .entry-footer a {
+	color: black;
+} 
+
 /**
  * >= 1200px
  */
@@ -4311,7 +4323,7 @@ header .only-desktop input[type="search"].search-field.toggle-search {
 
 	footer.entry-footer.sourcevortex {
 		position: absolute;
-		bottom: 5px;
+		bottom: 0;
 	}
 
 	.post-thumbnail-container {
