@@ -33,14 +33,11 @@
 				)
 			);
 
-			if ( '' !== get_the_author_meta( 'description' ) ) {
-				get_template_part( 'template-parts/biography' );
-			}
-			?>
+			get_template_part( 'template-parts/biography' );
+		?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer post-sourcevortex">
-		<?php twentysixteen_entry_meta(); ?>
 		<?php
 			// edit_post_link(
 			// 	sprintf(
@@ -53,5 +50,4 @@
 			// );
 			?>
 	</footer><!-- .entry-footer -->
-	<div class="line-separator"></div>
 </article><!-- #post-<?php the_ID(); ?> -->

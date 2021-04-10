@@ -79,7 +79,7 @@ if ( ! function_exists( 'twentysixteen_entry_date' ) ) :
 	 *
 	 * @since Twenty Sixteen 1.0
 	 */
-	function twentysixteen_entry_date( $return_time = false ) {
+	function twentysixteen_entry_date( $return_time = false, $inside_post = false ) {
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
@@ -95,12 +95,19 @@ if ( ! function_exists( 'twentysixteen_entry_date' ) ) :
 		);
 
 		// TODO: Translate
-		if ( $return_time ) {
+		if ( $return_time && !$inside_post ) {
 			printf(
 				'<span class="posted-on"><span class="screen-reader-text">%1$s </span><a href="%2$s" rel="bookmark">%3$s %4$s</a></span>',
 				_x( 'Posted on', 'Used before publish date.', 'twentysixteen' ),
 				esc_url( get_month_link( get_the_date( 'Y' ), get_the_date( 'm' ) ) ),
 				_x( ', em', '', 'twentysixteen' ),
+				$time_string
+			);
+		} else if ( $inside_post ) {
+			printf(
+				'<span class="posted-on"><span class="screen-reader-text">%1$s </span><a href="%2$s" rel="bookmark">%3$s</a></span>',
+				_x( 'Posted on', 'Used before publish date.', 'twentysixteen' ),
+				esc_url( get_month_link( get_the_date( 'Y' ), get_the_date( 'm' ) ) ),
 				$time_string
 			);
 		} else {

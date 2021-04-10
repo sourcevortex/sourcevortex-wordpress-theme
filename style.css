@@ -4364,6 +4364,16 @@ header .only-desktop input[type="search"].search-field.toggle-search {
 	font-size: 2em;
 }
 
+.post-sourcevortex .author-info {
+	border: 0;
+}
+
+.post-sourcevortex .author-avatar .avatar {
+	margin-top: 10px;
+	width: 96px;
+	height: 96px;
+}
+
 
 footer.entry-footer.post-sourcevortex {
 	margin-top: 120px !important;
