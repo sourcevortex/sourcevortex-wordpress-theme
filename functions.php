@@ -601,3 +601,15 @@ function twentysixteen_widget_tag_cloud_args( $args ) {
 	return $args;
 }
 add_filter( 'widget_tag_cloud_args', 'twentysixteen_widget_tag_cloud_args' );
+
+/**
+ * AMP Tweaks
+ */
+add_filter( 'amp_customizer_is_enabled', '__return_false' );
+
+add_filter( 'amp_post_template_file', function ( $file, $type ) {
+	if ( 'single' === $type ) {
+		$file = dirname( __FILE__ ) . '/template-parts/amp/single.php';
+	}
+	return $file;
+}, 10, 3 );
