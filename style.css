@@ -4249,7 +4249,7 @@ header .only-desktop input[type="search"].search-field.toggle-search {
 /**
  * 16.2 Home Loop
  */
-.home-loop post-title-excerpt.sourcevortex {
+.home-loop .post-title-excerpt.sourcevortex {
 	position: relative;
 }
 
