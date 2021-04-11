@@ -301,6 +301,18 @@ function twentysixteen_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
+
+	register_sidebar(
+		array(
+			'name'          => __( 'Home top', 'twentysixteen' ),
+			'id'            => 'home_top',
+			'description'   => __( 'Adicione widgets para aparecer no topo da página principal', 'twentysixteen' ),
+			'before_widget' => '',
+			'after_widget'  => '',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 }
 add_action( 'widgets_init', 'twentysixteen_widgets_init' );
 

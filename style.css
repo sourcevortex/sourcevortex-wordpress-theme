@@ -4405,3 +4405,11 @@ button:focus {
 .pagination .next:hover {
 	background-color: #ccac00;
 }
+
+/**
+ * 16.5 Home
+ */
+.home-top-widgets {
+	width: 100%;
+	height: auto;
+}

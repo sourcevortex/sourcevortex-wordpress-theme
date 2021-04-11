@@ -15,6 +15,10 @@
 
 get_header(); ?>
 
+	<div class="home-top-widgets widget-area">
+		<?php dynamic_sidebar( 'home-top' ); ?>
+	</div>
+
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
