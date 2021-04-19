@@ -38,4 +38,7 @@
 			<?php twentysixteen_entry_date( true, true ); ?>
 		</p><!-- .author-bio -->
 	</div><!-- .author-description -->
+	<div style="clear:both"></div>
 </div><!-- .author-info -->
+
+<div class="line-separator" style="margin-bottom: 50px;"></div>
