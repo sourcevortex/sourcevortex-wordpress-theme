@@ -615,6 +615,26 @@ function twentysixteen_widget_tag_cloud_args( $args ) {
 add_filter( 'widget_tag_cloud_args', 'twentysixteen_widget_tag_cloud_args' );
 
 /**
+ * Custom Tweaks
+ */
+function load_template_part( $template_name, $part_name = null ) {
+    ob_start();
+    get_template_part( $template_name, $part_name );
+    $var = ob_get_contents();
+    ob_end_clean();
+    return $var;
+}
+
+
+function inject_author_after_post( $content ) {
+	$author_template = load_template_part( 'template-parts/biography' );
+	$content.= $author_template;
+	return $content;
+}
+add_filter( 'the_content', 'inject_author_after_post' );
+
+
+/**
  * AMP Tweaks
  */
 add_filter( 'amp_customizer_is_enabled', '__return_false' );

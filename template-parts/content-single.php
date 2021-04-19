@@ -32,8 +32,6 @@
 					'separator'   => '<span class="screen-reader-text">, </span>',
 				)
 			);
-
-			get_template_part( 'template-parts/biography' );
 		?>
 	</div><!-- .entry-content -->
 
