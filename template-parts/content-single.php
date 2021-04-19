@@ -35,6 +35,8 @@
 		?>
 	</div><!-- .entry-content -->
 
+	<div class="go-to-top-btn actGoToTop" title="Voltar para o topo"></div>
+
 	<!-- <footer class="entry-footer post-sourcevortex"> -->
 		<?php
 			// edit_post_link(

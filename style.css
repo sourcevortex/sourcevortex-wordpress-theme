@@ -4399,6 +4399,43 @@ footer.entry-footer.post-sourcevortex {
 	float: none !important;
 }
 
+.go-to-top-btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	height: 30px;
+	width: 30px;
+	background-color: black;
+	border-radius: 3px;
+	cursor: pointer;
+	text-align: center;
+	font-size: 23px;
+}
+
+.go-to-top-btn:hover {
+	box-shadow: 0px 1px 2px 1px #111;
+	transition: box-shadow 0.3s;
+}
+
+.go-to-top-btn::after {
+	font-family: 'Genericons';
+	content:"\f432";
+	color: white;
+}
+
+/**
+ * >= 710px
+ */
+@media screen and (min-width: 44.375em) {
+	.go-to-top-btn {
+		right: 40px;
+		bottom: 40px;
+	}
+}
+
 /**
  * 16.4 Elements (widgets, buttons, etc...)
  */
