@@ -627,8 +627,10 @@ function load_template_part( $template_name, $part_name = null ) {
 
 
 function inject_author_after_post( $content ) {
-	$author_template = load_template_part( 'template-parts/biography' );
-	$content.= $author_template;
+	if ( !amp_is_request() ) {
+		$author_template = load_template_part( 'template-parts/biography' );
+		$content.= $author_template;
+	}
 	return $content;
 }
 add_filter( 'the_content', 'inject_author_after_post' );
