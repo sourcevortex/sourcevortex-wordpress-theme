@@ -4364,6 +4364,17 @@ header .only-desktop input[type="search"].search-field.toggle-search {
 	font-size: 2em;
 }
 
+.post-sourcevortex .tags-section a {
+	background-color: black;
+	padding: 3px 10px;
+	border-radius: 45px;
+	font-weight: bold;
+}
+
+.post-sourcevortex .tags-section a:hover {
+	color: white;
+}
+
 .post-sourcevortex .author-info {
 	border: 0;
 }

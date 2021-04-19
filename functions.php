@@ -625,6 +625,18 @@ function load_template_part( $template_name, $part_name = null ) {
     return $var;
 }
 
+function inject_tags_after_post( $content ) {
+	if ( amp_is_request() ) {
+		return $content;
+	}
+
+	$tags_list = get_the_tag_list( '', _x( ' ', 'Used between list items, there is a space after the comma.', 'twentysixteen' ) );
+	if ( $tags_list && ! is_wp_error( $tags_list ) ) {
+		$content.= "<p class='tags-section'><strong>Tags: </strong><span>{$tags_list}</span></p>";
+	}
+	return $content;
+}
+add_filter( 'the_content', 'inject_tags_after_post' );
 
 function inject_author_after_post( $content ) {
 	if ( !amp_is_request() ) {
