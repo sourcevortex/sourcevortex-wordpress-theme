@@ -41,4 +41,4 @@
 	<div style="clear:both"></div>
 </div><!-- .author-info -->
 
-<div class="line-separator" style="margin-bottom: 50px;"></div>
+<div class="line-separator" style="margin-bottom: 20px;"></div>

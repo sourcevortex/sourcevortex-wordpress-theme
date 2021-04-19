@@ -4077,6 +4077,10 @@ body {
 	font-family: 'Montserrat';
 }
 
+.no-margin-bottom {
+	margin-bottom: 0 !important;
+}
+
 .only-desktop {
 	display: none;
 }
@@ -4362,6 +4366,10 @@ header .only-desktop input[type="search"].search-field.toggle-search {
 
 .post-intern.entry-header h1 {
 	font-size: 2em;
+}
+
+.post-sourcevortex .tags-section {
+	margin-bottom: 60px;
 }
 
 .post-sourcevortex .tags-section a {

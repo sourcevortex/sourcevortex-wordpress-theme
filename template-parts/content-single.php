@@ -35,7 +35,7 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer post-sourcevortex">
+	<!-- <footer class="entry-footer post-sourcevortex"> -->
 		<?php
 			// edit_post_link(
 			// 	sprintf(
@@ -47,5 +47,5 @@
 			// 	'</span>'
 			// );
 			?>
-	</footer><!-- .entry-footer -->
+	<!-- </footer>--><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

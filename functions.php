@@ -617,6 +617,10 @@ add_filter( 'widget_tag_cloud_args', 'twentysixteen_widget_tag_cloud_args' );
 /**
  * Custom Tweaks
  */
+
+/**
+ * Get any template part content without print
+ */
 function load_template_part( $template_name, $part_name = null ) {
     ob_start();
     get_template_part( $template_name, $part_name );
@@ -625,19 +629,19 @@ function load_template_part( $template_name, $part_name = null ) {
     return $var;
 }
 
-function inject_tags_after_post( $content ) {
-	if ( amp_is_request() ) {
-		return $content;
-	}
-
-	$tags_list = get_the_tag_list( '', _x( ' ', 'Used between list items, there is a space after the comma.', 'twentysixteen' ) );
-	if ( $tags_list && ! is_wp_error( $tags_list ) ) {
-		$content.= "<p class='tags-section'><strong>Tags: </strong><span>{$tags_list}</span></p>";
-	}
+/**
+ * Inject social buttons after the post (depends of: Social Media Feather plugin)
+ */
+function inject_social_buttons_after_post( $content ) {
+	$content.= do_shortcode('[feather_share]');
+	$content.= "<div style='margin-bottom: 30px'></div>";
 	return $content;
 }
-add_filter( 'the_content', 'inject_tags_after_post' );
+add_filter( 'the_content', 'inject_social_buttons_after_post' );
 
+/**
+ * Inject the author biography (template part) after post content
+ */
 function inject_author_after_post( $content ) {
 	if ( !amp_is_request() ) {
 		$author_template = load_template_part( 'template-parts/biography' );
@@ -647,6 +651,18 @@ function inject_author_after_post( $content ) {
 }
 add_filter( 'the_content', 'inject_author_after_post' );
 
+function inject_tags_after_post( $content ) {
+	if ( amp_is_request() ) {
+		return $content;
+	}
+
+	$tags_list = get_the_tag_list( '', _x( ' ', 'Used between list items, there is a space.', 'twentysixteen' ) );
+	if ( $tags_list && ! is_wp_error( $tags_list ) ) {
+		$content.= "<p class='tags-section'><strong>Tags: </strong><span>{$tags_list}</span></p>";
+	}
+	return $content;
+}
+add_filter( 'the_content', 'inject_tags_after_post' );
 
 /**
  * AMP Tweaks
