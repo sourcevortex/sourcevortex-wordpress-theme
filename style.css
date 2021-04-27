@@ -1592,7 +1592,7 @@ blockquote:after,
 	background-color: black;
 	position: fixed;
 	width: 100%;
-	z-index: 5;
+	z-index: 50;
 }
 
 .site-header-main {
@@ -2822,7 +2822,7 @@ p > video {
 		/*padding: 3.9375em 7.6923%;*/
 		padding: 0 7.6923%;
 		position: fixed;
-		z-index: 2;
+		z-index: 50;
 		width: calc(100% - 5.4%);
 	}
 
@@ -3469,7 +3469,7 @@ p > video {
 
 	.site-header {
 		position: fixed;
-		z-index: 2;
+		z-index: 50;
 		width: calc(100% - 4%);
 		padding: 0 4.5455%;
 	}
@@ -3687,7 +3687,7 @@ p > video {
 	.site-header {
 		width: 100%;
 		position: fixed;
-		z-index: 4;
+		z-index: 50;
 		width: calc(100% - 3.07%);
 		padding: 0 4.5455%;
 	}
