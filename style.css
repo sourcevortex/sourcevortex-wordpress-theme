@@ -4077,6 +4077,10 @@ body {
 	font-family: 'Montserrat';
 }
 
+.site-header-main .social-navigation a {
+	color: white;
+}
+
 .no-margin-bottom {
 	margin-bottom: 0 !important;
 }
