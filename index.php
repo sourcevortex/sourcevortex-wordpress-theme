@@ -32,6 +32,10 @@ get_header(); ?>
 
 			<?php
 			// Start the loop.
+
+			$ad_count = 0;
+			$feed_ad_name = defined( 'FEED_AD_NAME' ) ? FEED_AD_NAME : '';
+
 			while ( have_posts() ) :
 				the_post();
 
@@ -45,6 +49,14 @@ get_header(); ?>
 				get_template_part( 'template-parts/home-loop' );
 
 				// End the loop.
+				
+				// AD Insert
+				$ad_count++;
+
+				if ( $ad_count == 3 && $feed_ad_name ) {
+					include __DIR__ . "/ads/{$feed_ad_name}";
+					$ad_count = 0;
+				}
 			endwhile;
 
 			// Previous/next page navigation.

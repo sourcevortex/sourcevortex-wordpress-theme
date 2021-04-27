@@ -4077,10 +4077,6 @@ body {
 	font-family: 'Montserrat';
 }
 
-ins.adsbygoogle {
-	background: none;
-}
-
 .site-header-main .social-navigation a {
 	color: white;
 }
@@ -4496,4 +4492,20 @@ button:focus {
 .home-top-widgets {
 	width: 100%;
 	height: auto;
+}
+
+/**
+ * 16.6 ADS
+ */
+ins.adsbygoogle {
+	background: none;
+}
+
+.feed-ad {
+	margin-bottom: 75px;
+}
+
+.feed-ad,
+.feed-ad ins {
+	min-height: 150px;
 }
