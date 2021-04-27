@@ -4345,6 +4345,21 @@ header .only-desktop input[type="search"].search-field.toggle-search {
 /**
  * 16.3 Post
  */
+body.post-template-default::before,
+body.post-template-default::after {
+	content: unset;
+}
+
+body.post-template-default div#page {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+body.post-template-default div#page header {
+	position: unset;
+	width: 100%;
+}
+
 .post-intern-thumbnail-container {
 	position: relative;
 	border-bottom: 4px solid #e6c619;
@@ -4377,6 +4392,7 @@ header .only-desktop input[type="search"].search-field.toggle-search {
 	padding: 3px 10px;
 	border-radius: 45px;
 	font-weight: bold;
+	white-space: nowrap;
 }
 
 .post-sourcevortex .tags-section a:hover {
@@ -4433,6 +4449,10 @@ footer.entry-footer.post-sourcevortex {
 	.go-to-top-btn {
 		right: 40px;
 		bottom: 40px;
+	}
+
+	div.post-sourcevortex {
+		margin-right: 7.6923%;
 	}
 }
 
