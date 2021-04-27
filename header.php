@@ -35,7 +35,8 @@
 	<?php endif; ?>
 
 	<?php if (G_AD_CLIENT): ?>
-		<script data-ad-client="<?= G_AD_CLIENT ?>" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=<?php echo G_AD_CLIENT ?>"
+     crossorigin="anonymous"></script>
 	<?php endif; ?>
 </head>
 
