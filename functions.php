@@ -415,6 +415,8 @@ function twentysixteen_scripts() {
 	// Custom CSS
     wp_enqueue_style( 'twentysixteen-prism', get_template_directory_uri() . '/css/prism.css', array( 'twentysixteen-style' ), '20210313' );
 	wp_enqueue_style( 'twentysixteen-custom-fonts', get_template_directory_uri() . '/css/custom-fonts.css', array( 'twentysixteen-style' ), '20210403' );
+	wp_enqueue_style( 'twentysixteen-fontawesome', get_template_directory_uri() . '/css/fontawesome/all.min.css', array( 'twentysixteen-style' ), '20210429' );
+	wp_enqueue_style( 'twentysixteen-sidemenu', get_template_directory_uri() . '/css/sidemenu.css', array( 'twentysixteen-style' ), '20210429' );
 
 	// Load the html5 shiv.
 	wp_enqueue_script( 'twentysixteen-html5', get_template_directory_uri() . '/js/html5.js', array(), '3.7.3' );
@@ -433,7 +435,8 @@ function twentysixteen_scripts() {
 	wp_enqueue_script( 'twentysixteen-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20181217', true );
 
 	// Custom JS
-	wp_enqueue_script( 'twentysixteen-toggle-search', get_template_directory_uri() . '/js/toggle-search.js', array(), '20210403', true );
+	wp_enqueue_script( 'twentysixteen-toggle-search', get_template_directory_uri() . '/js/toggle-search.js', array( 'jquery' ), '20210403', true );
+	wp_enqueue_script( 'twentysixteen-sidemenu', get_template_directory_uri() . '/js/sidemenu.js', array( 'jquery' ), '20210429', true );
 
 	wp_localize_script(
 		'twentysixteen-script',
@@ -617,6 +620,49 @@ add_filter( 'widget_tag_cloud_args', 'twentysixteen_widget_tag_cloud_args' );
 /**
  * Custom Tweaks
  */
+
+/**
+ * Get menu items by slug
+ */
+function get_menu_items_by_slug( $menu_slug ) {
+    $menu_items = array();
+
+    if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $menu_slug ] ) ) {
+        $menu = get_term( $locations[ $menu_slug ] );
+        $menu_items = wp_get_nav_menu_items( $menu->term_id );
+    }
+    return $menu_items;
+}
+
+function process_sidemenu_array( $menu_items ) {
+	$first_level_menus = [];
+	$second_level_menus = [];
+
+	$menu_icons = [
+		'games' => 'fas fa-gamepad',
+		'entretenimento' => 'fas fa-film',
+		'programação' => 'fas fa-code',
+		'tecnologia' => 'fas fa-tv'
+	];
+
+	foreach ( $menu_items as $p_menu ) {
+		if ( $p_menu->menu_item_parent ) {
+			$second_level_menus[ $p_menu->menu_item_parent ][] = $p_menu;
+			continue;
+		}
+	
+		$slug = str_replace( ' ', '', strtolower( $p_menu->title ) );
+	
+		$first_level_menus[] = [
+			'id' => $p_menu->ID,
+			'title' => $p_menu->title,
+			'icon' => $menu_icons[ $slug ] ?? 'circle-regular',
+			'url' => $p_menu->url
+		];
+	}
+
+	return [$first_level_menus, $second_level_menus];
+}
 
 /**
  * Get any template part content without print

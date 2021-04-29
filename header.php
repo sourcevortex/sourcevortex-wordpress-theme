@@ -34,7 +34,7 @@
 		<!-- End Google Analytics -->
 	<?php endif; ?>
 
-	<?php if (G_AD_CLIENT): ?>
+	<?php if ( G_AD_CLIENT ): ?>
 		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=<?php echo G_AD_CLIENT ?>"
      crossorigin="anonymous"></script>
 	<?php endif; ?>
@@ -43,8 +43,15 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
+
+	<?php include __DIR__ . "/sidemenu.php"; ?>
+
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-header-main">
+			<div class="sidemenu-icon actOpenSidemenu">
+				<span class="menuicon"></span>
+			</div>
+
 			<div class="site-branding">
 				<?php twentysixteen_the_custom_logo(); ?>
 
@@ -54,44 +61,6 @@
 					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 				<?php endif; ?>
 			</div><!-- .site-branding -->
-
-			<?php if ( has_nav_menu( 'primary' ) || has_nav_menu( 'social' ) ) : ?>
-				<button id="menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'twentysixteen' ); ?></button>
-
-				<div id="site-header-menu" class="site-header-menu">
-					<?php if ( has_nav_menu( 'primary' ) ) : ?>
-						<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'twentysixteen' ); ?>">
-							<div class="mobile-search-container only-mobile">
-								<?php get_search_form(); ?>
-							</div>
-							<?php
-								wp_nav_menu(
-									array(
-										'theme_location' => 'primary',
-										'menu_class' => 'primary-menu',
-									)
-								);
-							?>
-						</nav><!-- .main-navigation -->
-					<?php endif; ?>
-
-					<?php if ( has_nav_menu( 'social' ) ) : ?>
-						<nav id="social-navigation" class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Social Links Menu', 'twentysixteen' ); ?>">
-							<?php
-								wp_nav_menu(
-									array(
-										'theme_location' => 'social',
-										'menu_class'  => 'social-links-menu',
-										'depth'       => 1,
-										'link_before' => '<span class="screen-reader-text">',
-										'link_after'  => '</span>',
-									)
-								);
-							?>
-						</nav><!-- .social-navigation -->
-					<?php endif; ?>
-				</div><!-- .site-header-menu -->
-			<?php endif; ?>
 
 			<div class="desktop-search-container only-desktop">
 				<?php get_search_form() ?>
