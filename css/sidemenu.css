@@ -41,6 +41,14 @@
 	padding: 80px 10px 0 10px;
 }
 
+.sidemenu-container .sidemenu-bottom-icons {
+	position: fixed;
+	bottom: 20px;
+	width: 60px;
+	left: 21px;
+	height: 50px;
+}
+
 .sidemenu-container .sidemenu-icon {
 	color: white;
 	font-size: 20px;
@@ -80,7 +88,7 @@ div.drawer-menu .drawer-subcontainer {
     flex-direction: column;
 }
 
-div.drawer-menu a.drawer-title {
+div.drawer-menu .drawer-title {
 	display: inline-block;
     font-weight: bold;
     border-bottom: 2px solid black;

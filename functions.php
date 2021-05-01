@@ -634,6 +634,11 @@ function get_menu_items_by_slug( $menu_slug ) {
     return $menu_items;
 }
 
+/**
+ * Process sidemenu items from WP Menus
+ * 
+ * @param array $menu_items
+ */
 function process_sidemenu_array( $menu_items ) {
 	$first_level_menus = [];
 	$second_level_menus = [];
@@ -647,21 +652,46 @@ function process_sidemenu_array( $menu_items ) {
 
 	foreach ( $menu_items as $p_menu ) {
 		if ( $p_menu->menu_item_parent ) {
-			$second_level_menus[ $p_menu->menu_item_parent ][] = $p_menu;
+			$second_level_menus[ $p_menu->menu_item_parent ][] = [
+				'slm_id' => $p_menu->ID,
+				'slm_title' => $p_menu->title,
+				'slm_url' => $p_menu->url,
+				'slm_target' => '_self'
+			];
 			continue;
 		}
 	
 		$slug = str_replace( ' ', '', strtolower( $p_menu->title ) );
 	
 		$first_level_menus[] = [
-			'id' => $p_menu->ID,
-			'title' => $p_menu->title,
-			'icon' => $menu_icons[ $slug ] ?? 'circle-regular',
-			'url' => $p_menu->url
+			'flm_id' => $p_menu->ID,
+			'flm_title' => $p_menu->title,
+			'flm_icon' => $menu_icons[ $slug ] ?? 'circle-regular',
+			'flm_url' => $p_menu->url
 		];
 	}
 
 	return [$first_level_menus, $second_level_menus];
+}
+
+/**
+ * Process sidemenu social items from WP Menus
+ * 
+ * @param array $social_items
+ */
+function add_social_sidemenu( $social_items ) {
+	$social_menus = [];
+
+	foreach ( $social_items as $item ) {
+		$social_menus[] = [
+			'slm_id' => 'social',
+			'slm_title' => $item->title,
+			'slm_url' => $item->url,
+			'slm_target' => 'blank'
+		];
+	}
+
+	return $social_menus;
 }
 
 /**
