@@ -140,6 +140,10 @@
 			return;
 		}
 
+		if ( !body.hasClass( 'entry-footer' ) ) {
+			return;
+		}
+
 		$( '.entry-content' ).find( param ).each( function() {
 			var element              = $( this ),
 				elementPos           = element.offset(),
