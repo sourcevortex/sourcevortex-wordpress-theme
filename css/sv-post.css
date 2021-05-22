@@ -1,0 +1,127 @@
+/**
+ * 16.3 Post
+ */
+ body.post-template-default::before,
+ body.post-template-default::after {
+     content: unset;
+ }
+ 
+ body.post-template-default div#page {
+     margin-top: 0;
+     margin-bottom: 0;
+ }
+ 
+ body.post-template-default div#page header {
+     position: relative;
+     width: 100%;
+ }
+ 
+ header.post-intern {
+     padding: 0 7%;
+     margin: 0;
+ }
+ 
+ .post-intern-thumbnail-container {
+     position: relative;
+     border-bottom: 4px solid #e6c619;
+     margin-bottom: 30px;
+ }
+ 
+ .post-intern-thumbnail-container .category-box {
+     position: absolute;
+     left: 5px;
+     bottom: 0;
+     font-family: 'Montserrat';
+     font-size: 0.8em;
+     display: inline-block;
+     background-color: #e6c619;
+     padding: 3px 10px;
+     color: black;
+     text-transform: uppercase;
+ }
+ 
+ .post-intern.entry-header h1 {
+     font-size: 2em;
+ }
+ 
+ .post-sourcevortex .tags-section {
+     margin-bottom: 60px;
+ }
+ 
+ .post-sourcevortex .tags-section a {
+     background-color: black;
+     padding: 3px 10px;
+     border-radius: 45px;
+     font-weight: bold;
+     white-space: nowrap;
+ }
+ 
+ .post-sourcevortex .tags-section a:hover {
+     color: white;
+ }
+ 
+ .post-sourcevortex .author-info {
+     border: 0;
+ }
+ 
+ .post-sourcevortex .author-avatar .avatar {
+     margin-top: 10px;
+     width: 96px;
+     height: 96px;
+ }
+ 
+ 
+ footer.entry-footer.post-sourcevortex {
+     margin-top: 120px !important;
+     float: none !important;
+ }
+ 
+ .go-to-top-btn {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     position: fixed;
+     right: 20px;
+     bottom: 20px;
+     height: 30px;
+     width: 30px;
+     background-color: black;
+     border-radius: 3px;
+     cursor: pointer;
+     text-align: center;
+     font-size: 23px;
+ }
+ 
+ .go-to-top-btn:hover {
+     box-shadow: 0px 1px 2px 1px #111;
+     transition: box-shadow 0.3s;
+ }
+ 
+ .go-to-top-btn::after {
+     font-family: 'Genericons';
+     content:"\f432";
+     color: white;
+ }
+ 
+ /**
+  * >= 710px
+  */
+ @media screen and (min-width: 44.375em) {
+     .go-to-top-btn {
+         right: 40px;
+         bottom: 40px;
+     }
+ 
+     div.post-sourcevortex {
+         margin-right: 7.6923%;
+     }
+ }
+ 
+ /**
+  * >= 985px
+  */
+ @media screen and (min-width: 61.5625em) {
+     header.post-intern {
+         padding: 0;
+     }
+ }
