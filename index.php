@@ -78,5 +78,13 @@ get_header(); ?>
 		</main><!-- .site-main -->
 	</div><!-- .content-area -->
 
+<?php
+	$sticky_ad_footer = defined( 'STICKY_AD_FOOTER' ) ? STICKY_AD_FOOTER : '';
+	
+	if ( $sticky_ad_footer ) {
+		include __DIR__ . "/ads/{$sticky_ad_footer}";
+	}
+?>
+
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
