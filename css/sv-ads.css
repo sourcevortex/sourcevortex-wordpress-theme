@@ -57,6 +57,10 @@ ins.adsbygoogle {
 	color: black;
 }
 
+.sticky-footer-ad-container ins {
+	padding: 0;
+}
+
 /**
  * 14.1 - >= 710px
  */
