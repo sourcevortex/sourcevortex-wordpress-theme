@@ -620,7 +620,6 @@ add_filter( 'widget_tag_cloud_args', 'twentysixteen_widget_tag_cloud_args' );
 add_action( 'wp_enqueue_scripts', function() {
 	wp_enqueue_style( 'sourcevortex-prism', get_template_directory_uri() . '/css/prism.css', array( 'twentysixteen-style' ), '20210313' );
 	wp_enqueue_style( 'sourcevortex-custom-fonts', get_template_directory_uri() . '/css/custom-fonts.css', array( 'twentysixteen-style' ), '20210403' );
-	wp_enqueue_style( 'sourcevortex-fontawesome', get_template_directory_uri() . '/css/fontawesome/all.min.css', array( 'twentysixteen-style' ), '20210429' );
 	wp_enqueue_style( 'sourcevortex-all-styles', get_template_directory_uri() . '/css/sv-all-styles.css', array( 'twentysixteen-style' ), '20210429' );
 	wp_enqueue_style( 'sourcevortex-all-header', get_template_directory_uri() . '/css/sv-all-header.css', array( 'twentysixteen-style', 'sourcevortex-all-styles' ), '20210429' );
 	wp_enqueue_style( 'sourcevortex-sidemenu', get_template_directory_uri() . '/css/sv-sidemenu.css', array( 'twentysixteen-style', 'sourcevortex-all-styles' ), '20210429' );
@@ -659,10 +658,10 @@ function process_sidemenu_array( $menu_items ) {
 	$second_level_menus = [];
 
 	$menu_icons = [
-		'games' => 'fas fa-gamepad',
-		'entretenimento' => 'fas fa-film',
-		'programação' => 'fas fa-code',
-		'tecnologia' => 'fas fa-tv'
+		'games' => file_get_contents( get_template_directory() . '/img/gamepad-solid.svg' ),
+		'entretenimento' => file_get_contents( get_template_directory() . '/img/film-solid.svg' ),
+		'programação' => file_get_contents( get_template_directory() . '/img/code-solid.svg' ),
+		'tecnologia' => file_get_contents( get_template_directory() . '/img/tv-solid.svg' )
 	];
 
 	foreach ( $menu_items as $p_menu ) {

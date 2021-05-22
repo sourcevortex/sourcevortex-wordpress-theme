@@ -51,10 +51,14 @@
 
 .sidemenu-container .sidemenu-icon {
 	color: white;
-	font-size: 20px;
 	text-align: center;
 	margin-bottom: 10px;
 	cursor: pointer;
+}
+
+.sidemenu-container .sidemenu-icon svg {
+	width: 28px;
+	height: 28px;
 }
 
 .sidemenu-container .sidemenu-icon:hover {

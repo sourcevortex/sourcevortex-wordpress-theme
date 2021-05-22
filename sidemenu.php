@@ -19,7 +19,7 @@ $dark_is_enabled = false;
             <?php
                 foreach ( $first_level_menus as $f_menu ) {
                     extract( $f_menu );
-                    echo "<p class='sidemenu-icon actOpenDrawer' title='{$flm_title}' data-id='sidemenu_{$flm_id}'><i class='{$flm_icon}'></i></p>";
+                    echo "<p class='sidemenu-icon actOpenDrawer' title='{$flm_title}' data-id='sidemenu_{$flm_id}'>{$flm_icon}</i></p>";
                 } 
             ?>
         </div>
@@ -33,11 +33,13 @@ $dark_is_enabled = false;
                     }
                 ?>
             </p>
-            <?php if ( count( $social_menus ) > 0 ): ?>
-                <p class="sidemenu-icon actOpenDrawer" title="<?= _('Redes sociais') ?>" data-id="sidemenu_social">
-                    <i class="fas fa-share-alt-square"></i>
-                </p>
-            <?php endif; ?>
+            <?php
+                if ( count( $social_menus ) > 0 ) {
+                    $sm_title = _('Redes sociais');
+                    $sm_icon = file_get_contents( get_template_directory() . '/img/share-alt-square-solid.svg' );
+                    echo "<p class='sidemenu-icon actOpenDrawer' title='{$sm_title}' data-id='sidemenu_social'>{$sm_icon}</p>";
+                }                   
+            ?>
         </div>
     </div>
 </div>
