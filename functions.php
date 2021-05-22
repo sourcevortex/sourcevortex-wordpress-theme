@@ -635,6 +635,10 @@ add_action( 'wp_enqueue_scripts', function() {
 	wp_enqueue_script( 'sourcevortex-sidemenu', get_template_directory_uri() . '/js/sv-sidemenu.js', array( 'jquery' ), '20210429', true );
 } );
 
+add_action( 'widgets_init', function() {
+	require __DIR__ . '/widgets/sv-highlights-gallery/sv-highlights-gallery.php';
+} );
+
 /**
  * Get menu items by slug
  */
