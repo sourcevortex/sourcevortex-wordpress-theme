@@ -123,7 +123,7 @@
 			<?php
 				$post_ad_top = defined( 'POST_AD_TOP' ) ? POST_AD_TOP : '';
 				
-				if ( $post_ad_top ) {
+				if ( $post_ad_top && is_single() ) {
 					include __DIR__ . "/ads/{$post_ad_top}";
 				}
 			?>
