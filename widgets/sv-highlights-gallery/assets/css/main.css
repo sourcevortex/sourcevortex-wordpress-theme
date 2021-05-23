@@ -11,11 +11,27 @@
 }
 
 .hgw_carousel .hgw_carousel_img {
+    position: relative;
     width: 100%;
     height: 180px;
     overflow: hidden;
     background-size: cover;
     background-position: unset;
+}
+
+.hgw_carousel .hgw_category_box {
+    position: absolute;
+    bottom: 0;
+    left: 6px;
+    display: inline-block;
+    background: #e6c619;
+    padding: 3px 10px;
+}
+
+.hgw_carousel .hgw_category_box p {
+    font-size: 0.8em;
+    margin: 0;
+    color: black;
 }
 
 .hgw_carousel .hgw_anchor_container {
@@ -47,7 +63,7 @@
     width: 0;
 }
 
-.hgw_carousel .hgw_title_container p {
+.hgw_carousel .hgw_title_container p.hgw_title {
     color: white;
     font-weight: bold;
     margin-bottom: 0;
@@ -55,12 +71,16 @@
     text-transform: uppercase;
 }
 
+.hgw_carousel p.hgw_excerpt {
+    display: none;
+}
+
 .hgw-plugin.line-separator {
     margin-bottom: 10px;
 }
 
 /**
- * >= 783px
+ * >= 710px
  */
 @media screen and (min-width: 44.375em) {
     .hgw_carousel .hgw_carousel_img {
@@ -92,20 +112,35 @@
     }
 
     .hgw_carousel .hgw_carousel_img {
-        position: relative;
         height: auto;
         background-size: cover;
         background-position: unset;
     }
 
-    .hgw_carousel .hgw_carousel_img::before {
+    .hgw_carousel .hgw_category_box {
+        bottom: unset;
+        top: 0;
+        left: 20px;
+        padding: 5px 30px;
+    }
+
+    .hgw_carousel .hgw_category_box p {
+        font-size: 0.9em;
+    }
+
+    .hgw_carousel_corner {
+        position: relative;
+    }
+
+    .hgw_carousel_corner::before {
         content: '';
         position: absolute;
-        bottom: 0;
+        bottom: 23px;
         left: 0;
         border-top: 45px solid transparent;
         border-left: 45px solid white;
         width: 0;
+        z-index: 5;
     }
 
     .hgw_carousel .hgw_img_gradient {
@@ -131,7 +166,15 @@
         content: unset;
     }
 
-    .hgw_carousel .hgw_title_container p {
+    .hgw_carousel .hgw_title_container p.hgw_title {
+        text-align: left;
         font-size: 20px;
+        margin-bottom: 45px;
+    }
+
+    .hgw_carousel p.hgw_excerpt {
+        display: block;
+        color: white;
+        font-size: 14px;
     }
 }

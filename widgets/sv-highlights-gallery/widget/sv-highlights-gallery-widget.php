@@ -70,12 +70,14 @@ class sv_hgw_widget extends WP_Widget {
      */
     public function widget( $args, $instance ) {
         $number_posts = isset( $instance[ 'number_posts' ] ) ? $instance[ 'number_posts' ] : 5;
+        $excerpt_limit = isset( $instance[ 'excerpt_limit' ] ) ? $instance[ 'excerpt_limit' ] : 100;
 
         $this->load_assets();        
         $highlighted_posts = $this->get_highlighted_posts( SV_HG_DEFAULT_CATEGORY, $number_posts );
 
         if ( $highlighted_posts && $highlighted_posts->have_posts() ) {
             echo $args['before_widget'];
+            echo '<div class="hgw_carousel_corner">';
             echo '<div class="hgw_carousel hgw_carousel_container">';
 
             while ( $highlighted_posts->have_posts() ) {
@@ -83,6 +85,7 @@ class sv_hgw_widget extends WP_Widget {
                 include $this->templates . '/default-gallery.php';
             }
 
+            echo '</div>';
             echo '</div>';
             echo $args['after_widget'];
         }
@@ -93,6 +96,10 @@ class sv_hgw_widget extends WP_Widget {
             ? $instance[ 'number_posts' ]
             : __( 5, 'sv_hgw_widget' );
 
+        $excerpt_limit = isset( $instance[ 'excerpt_limit' ] )
+            ? $instance[ 'excerpt_limit' ]
+            : __( 100, 'sv_hgw_widget' );
+
 
         include SV_HG_WIDGET_DIR_PATH . '/widget-form.php';
     }
@@ -100,6 +107,7 @@ class sv_hgw_widget extends WP_Widget {
     public function update( $new_instance, $old_instance ) {
         $instance = array();
         $instance['number_posts'] = ( ! empty( $new_instance['number_posts'] ) ) ? strip_tags( $new_instance['number_posts'] ) : '';
+        $instance['excerpt_limit'] = ( ! empty( $new_instance['excerpt_limit'] ) ) ? strip_tags( $new_instance['excerpt_limit'] ) : '';
         return $instance;
     }
 } 
