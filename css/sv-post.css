@@ -31,6 +31,13 @@ body.post-template-default div#page header {
     margin-bottom: 30px;
 }
 
+.sourcevortex-intern .post-intern-thumbnail-container .post-thumbnail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+}
+
 .sourcevortex-intern .post-intern-thumbnail-container .category-box {
     position: absolute;
     left: 5px;
