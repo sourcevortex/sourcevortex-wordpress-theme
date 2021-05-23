@@ -25,6 +25,17 @@
 	position: relative;
 }
 
+.home-loop .post-thumbnail-container::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-bottom: 45px solid transparent;
+	border-left: 45px solid white;
+	width: 0;
+	z-index: 2;
+}
+
 .home-loop .entry-title {
 	margin-top: 15px;
 }
