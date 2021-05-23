@@ -16,7 +16,7 @@ ins.adsbygoogle {
  * Post AD Top
  */
 .post-ad-top {
-	width:728px;
+	min-width:728px;
 	height:90px;
 	margin: 0 auto 30px auto;
 }
