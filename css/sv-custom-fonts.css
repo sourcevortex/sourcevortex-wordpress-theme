@@ -2,3 +2,8 @@
     font-family: "OriginTech";
     src: url("../fonts/OriginTech_personal_use.otf") format("opentype");
 }
+
+@font-face {
+    font-family: "Asap";
+    src: url("../fonts/Asap-Regular.ttf") format("truetype")
+}

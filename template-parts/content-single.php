@@ -8,12 +8,12 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header post-intern">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
-
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'sourcevortex-intern' ); ?>>
 	<div class="post-intern-thumbnail-container">
+		<header class="entry-header post-intern">
+			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		</header>
+
 		<?php twentysixteen_post_thumbnail(); ?>
 		<?php twentysixteen_get_first_category() ?>
 	</div>
