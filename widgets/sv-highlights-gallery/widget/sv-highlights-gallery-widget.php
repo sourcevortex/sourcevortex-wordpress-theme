@@ -57,7 +57,7 @@ class sv_hgw_widget extends WP_Widget {
     private function get_highlighted_posts( $category, $number_posts = 5 ) {
         if ( $category ) {
             return new WP_Query( [
-                'category_name' => 'Destaques',
+                'category_name' => $category,
                 'showposts' => $number_posts
             ] );
         } else {
