@@ -2,7 +2,7 @@
  * 16.3 Post
  */
 :not(body).site-content {
-    padding-top: 60px;
+    padding-top: 30px;
 }
 
 body.post-template-default::before,
