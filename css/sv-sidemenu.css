@@ -65,16 +65,16 @@
 	color: #ffc600;
 }
 
-body:not(.srcvtx_theme_light) .srcvtx-toggle-light,
-body.srcvtx_theme_light .srcvtx-toggle-light {
+html:not(.srcvtx_theme_light) .srcvtx-toggle-light,
+html.srcvtx_theme_light .srcvtx-toggle-light {
 	display: none;
 }
 
-body.srcvtx_theme_dark .srcvtx-toggle-light {
+html.srcvtx_theme_dark .srcvtx-toggle-light {
 	display: block;
 }
 
-body.srcvtx_theme_dark .srcvtx-toggle-dark {
+html.srcvtx_theme_dark .srcvtx-toggle-dark {
 	display: none;
 }
 /* END: First menu: Sidebar icons */
