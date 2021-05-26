@@ -18,6 +18,17 @@
 	<?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
 	<link rel="pingback" href="<?php echo esc_url( get_bloginfo( 'pingback_url' ) ); ?>">
 	<?php endif; ?>
+
+	<script>
+		(function() {
+			var srcVtxTheme = localStorage.getItem('srcvtx_theme');
+			var srcVtxBody = document.querySelector('html');
+
+			srcVtxBody.classList.remove('srcvtx_theme_light', 'srcvtx_theme_dark');
+			srcVtxBody.classList.add('srcvtx_theme_'+srcVtxTheme);
+		})();
+	</script>
+
 	<?php wp_head(); ?>
 
 	<?php if ( GA_UA ): ?>
