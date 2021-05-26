@@ -61,6 +61,16 @@
 	</div><!-- .site-inner -->
 </div><!-- .site -->
 
+<script>
+	(function() {
+		var srcVtxTheme = localStorage.getItem('srcvtx_theme');
+		var srcVtxBody = document.querySelector('body');
+
+		srcVtxBody.classList.remove('srcvtx_theme_light', 'srcvtx_theme_dark');
+		srcVtxBody.classList.add('srcvtx_theme_'+srcVtxTheme);
+	})();
+</script>
+
 <?php wp_footer(); ?>
 </body>
 </html>

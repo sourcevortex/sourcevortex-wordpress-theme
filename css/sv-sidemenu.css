@@ -65,16 +65,6 @@
 	color: #ffc600;
 }
 
-.sidemenu-container .sidemenu-bottom-icons > form {
-	display: flex;
-	justify-content: center;
-}
-
-.sidemenu-container button.sidemenu-icon {
-	margin-bottom: 0;
-	background-color: unset;
-}
-
 body:not(.srcvtx_theme_light) .srcvtx-toggle-light,
 body.srcvtx_theme_light .srcvtx-toggle-light {
 	display: none;
