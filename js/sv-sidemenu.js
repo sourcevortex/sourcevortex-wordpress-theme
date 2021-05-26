@@ -15,9 +15,9 @@
 
     $( '.actChangeSrcVtxTheme' ).on( 'click', function() {
         var theme = $( this ).data( 'theme' );
-        $( 'body' ).removeClass( 'srcvtx_theme_dark' );
-        $( 'body' ).removeClass( 'srcvtx_theme_light' );
-        $( 'body' ).addClass( 'srcvtx_theme_' + theme );
+        $( 'html' ).removeClass( 'srcvtx_theme_dark' );
+        $( 'html' ).removeClass( 'srcvtx_theme_light' );
+        $( 'html' ).addClass( 'srcvtx_theme_' + theme );
 
         localStorage.setItem('srcvtx_theme', theme);
     } );
