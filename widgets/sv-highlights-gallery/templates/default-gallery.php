@@ -8,7 +8,7 @@ $post_img = get_the_post_thumbnail_url( $post_ID );
 $excerpt = get_the_excerpt();
 $excerpt = strlen( $excerpt ) >= $excerpt_limit
     ? substr( $excerpt, 0, $excerpt_limit ) . '<strong> ... [Confira mais!]</strong>'
-    : $excerpt;
+    : $excerpt . '<strong> [Confira mais!]</strong>';
 
 ?>
 
