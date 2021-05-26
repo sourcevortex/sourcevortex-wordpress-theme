@@ -12,4 +12,21 @@
         $( '.drawer-menu:not('+id+')' ).removeClass( 'opened' );
         $( id ).toggleClass( 'opened' );
     } );
+
+    $( '.actChangeSrcVtxTheme' ).on( 'click', function() {
+        var theme = $( this ).data( 'theme' );
+        $( 'body' ).removeClass( 'srcvtx_theme_dark' );
+        $( 'body' ).removeClass( 'srcvtx_theme_light' );
+        $( 'body' ).addClass( 'srcvtx_theme_' + theme );
+
+        localStorage.setItem('srcvtx_theme', theme);
+    } );
+
+    (function () {
+        var theme = localStorage.getItem('srcvtx_theme');
+        
+        $( 'body' ).removeClass( 'srcvtx_theme_dark' );
+        $( 'body' ).removeClass( 'srcvtx_theme_light' );
+        $( 'body' ).addClass( 'srcvtx_theme_' + theme );
+    } )();
 } )( jQuery );

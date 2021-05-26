@@ -1,16 +1,11 @@
 <?php
 
-// TODO: Improve code quality (cleaning, integrity, mixed code)
-
 list(
     $first_level_menus,
     $second_level_menus
 ) = process_sidemenu_array( get_menu_items_by_slug( 'primary' ) );
 
 $social_menus = add_social_sidemenu( get_menu_items_by_slug( 'social' ) );
-
-$dark_is_enabled = false;
-
 ?>
 
 <div class="sidemenu-container">
@@ -24,16 +19,15 @@ $dark_is_enabled = false;
             ?>
         </div>
         <div class="sidemenu-bottom-icons">
-            <p class="sidemenu-icon" style="visibility:hidden;">
-                <?php
-                    if ( $dark_is_enabled ) {
-                        echo '<i class="far fa-sun"></i>';
-                    } else {
-                        echo '<i class="far fa-moon"></i>';
-                    }
-                ?>
-            </p>
             <?php
+                if ( is_user_logged_in() ) {
+                    $sun_icon = file_get_contents( get_template_directory() . '/img/sun-regular.svg' );
+                    echo "<p class='actChangeSrcVtxTheme srcvtx-toggle-light sidemenu-icon' data-theme='light'>{$sun_icon}</p>";
+                    
+                    $moon_icon = file_get_contents( get_template_directory() . '/img/moon-regular.svg' );
+                    echo "<p class='actChangeSrcVtxTheme srcvtx-toggle-dark sidemenu-icon' data-theme='dark'>{$moon_icon}</p>";
+                }
+
                 if ( count( $social_menus ) > 0 ) {
                     $sm_title = _('Redes sociais');
                     $sm_icon = file_get_contents( get_template_directory() . '/img/share-alt-square-solid.svg' );

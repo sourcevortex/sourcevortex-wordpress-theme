@@ -1,0 +1,102 @@
+/**
+ * Theme mode overrides (light / dark)
+ *
+ */
+
+/* INI: General */
+body.srcvtx_theme_dark .site-inner {
+    background-color: #171717;
+}
+/* END: General */
+
+/* INI: Sidemenu container */
+body.srcvtx_theme_dark .sidemenu-container {
+    background-color: black;
+}
+/* END: Sidemenu container */
+
+/* INI: Highlight gallery */
+body.srcvtx_theme_dark .hgw_carousel_corner::before {
+    border-left: 45px solid #171717;
+}
+
+body.srcvtx_theme_dark .slick-dots li.slick-active button::before,
+body.srcvtx_theme_dark .slick-dots li button::before {
+    color: white;
+}
+/* END: Highlight gallery */
+
+/* INI: Home loop */
+body.srcvtx_theme_dark .home-loop .post-thumbnail-container::before {
+    border-left: 45px solid #171717;
+}
+
+body.srcvtx_theme_dark .home-loop .post-box h2.entry-title a,
+body.srcvtx_theme_dark .home-loop .post-box .entry-footer.sourcevortex * {
+    color: white;
+}
+/* END: Home loop */
+
+/* INI: Widget */
+body.srcvtx_theme_dark .widget {
+    border-top: 3px solid lightgray;
+}
+
+body.srcvtx_theme_dark .widget h2.widget-title {
+    color: lightgray;
+}
+/* END: Widget */
+
+/* INI: Pagination */
+body.srcvtx_theme_dark nav.navigation.pagination {
+    border-top: 3px solid lightgray;
+}
+
+body.srcvtx_theme_dark nav.navigation .prev.page-numbers,
+body.srcvtx_theme_dark nav.navigation .next.page-numbers {
+    background-color: lightgray;
+    color: black;
+}
+
+body.srcvtx_theme_dark nav.navigation .prev.page-numbers:hover,
+body.srcvtx_theme_dark nav.navigation .next.page-numbers:hover {
+    color: gray;
+}
+
+body.srcvtx_theme_dark .page-numbers.current,
+body.srcvtx_theme_dark .page-numbers.dots {
+    color: white;
+}
+
+body.srcvtx_theme_dark .page-numbers:hover {
+    color: lightgray;
+}
+
+body.srcvtx_theme_dark footer .social-navigation a {
+    color: white;
+}
+
+body.srcvtx_theme_dark footer .social-navigation a:hover,
+body.srcvtx_theme_dark footer .social-navigation a:hover::before {
+    color: #e6c619;
+}
+/* END: Pagination */
+
+/* INI: Post intern */
+body.srcvtx_theme_dark .sourcevortex-intern header.post-intern::before {
+    border-left: 20px solid #171717;
+}
+
+body.srcvtx_theme_dark .sourcevortex-intern .entry-content.post-sourcevortex > *:not(a,div) {
+    color: lightgray;
+}
+
+body.srcvtx_theme_dark .relpost-block-single {
+    background-color: #171717;
+}
+
+body.srcvtx_theme_dark .relpost-thumb-wrapper h3,
+body.srcvtx_theme_dark .relpost-thumb-wrapper div {
+    color: lightgray !important;
+}
+/* END: Post intern */
