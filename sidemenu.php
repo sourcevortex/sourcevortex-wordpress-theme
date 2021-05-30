@@ -20,13 +20,11 @@ $social_menus = add_social_sidemenu( get_menu_items_by_slug( 'social' ) );
         </div>
         <div class="sidemenu-bottom-icons">
             <?php
-                if ( is_user_logged_in() ) {
-                    $sun_icon = file_get_contents( get_template_directory() . '/img/sun-regular.svg' );
-                    echo "<p class='actChangeSrcVtxTheme srcvtx-toggle-light sidemenu-icon' data-theme='light'>{$sun_icon}</p>";
-                    
-                    $moon_icon = file_get_contents( get_template_directory() . '/img/moon-regular.svg' );
-                    echo "<p class='actChangeSrcVtxTheme srcvtx-toggle-dark sidemenu-icon' data-theme='dark'>{$moon_icon}</p>";
-                }
+                $sun_icon = file_get_contents( get_template_directory() . '/img/sun-regular.svg' );
+                echo "<p class='actChangeSrcVtxTheme srcvtx-toggle-light sidemenu-icon' data-theme='light'>{$sun_icon}</p>";
+                
+                $moon_icon = file_get_contents( get_template_directory() . '/img/moon-regular.svg' );
+                echo "<p class='actChangeSrcVtxTheme srcvtx-toggle-dark sidemenu-icon' data-theme='dark'>{$moon_icon}</p>";
 
                 if ( count( $social_menus ) > 0 ) {
                     $sm_title = _('Redes sociais');

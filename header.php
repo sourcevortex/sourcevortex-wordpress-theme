@@ -98,15 +98,13 @@
 							</nav><!-- .main-navigation -->
 						<?php endif; ?>
 
-						<?php if ( is_user_logged_in() ): ?>
-							<div class="mobile-theme-switcher">
-								<p><?= __( 'Tema escuro', 'twentysixteen' ) ?></p>
-								<label class="srcvtx-switch">
-									<input id="mobile-theme-switch-input" class="actMobileToggleDarkTheme" type="checkbox">
-									<span class="srcvtx-slider"></span>
-								</label>
-							</div>
-						<?php endif; ?>
+						<div class="mobile-theme-switcher">
+							<p><?= __( 'Tema escuro', 'twentysixteen' ) ?></p>
+							<label class="srcvtx-switch">
+								<input id="mobile-theme-switch-input" class="actMobileToggleDarkTheme" type="checkbox">
+								<span class="srcvtx-slider"></span>
+							</label>
+						</div>
 					</div>
 				</div>
 			<?php endif; ?>
