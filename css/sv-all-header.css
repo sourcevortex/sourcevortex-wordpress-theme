@@ -91,6 +91,17 @@ header .only-desktop input[type="search"].search-field.toggle-search {
 	color: #ccac00;
 }
 
+div.mobile-theme-switcher {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 25px;
+}
+
+div.mobile-theme-switcher p {
+	color: #d1d1d1;
+	margin: 0;
+}
+
 /**
  * >= 985px
  */

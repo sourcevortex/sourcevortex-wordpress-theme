@@ -4,7 +4,9 @@
  */
 
 /* INI: General */
-html.srcvtx_theme_dark .site-inner {
+
+html.srcvtx_theme_dark div#page,
+html.srcvtx_theme_dark div.site-inner {
     background-color: #171717;
 }
 /* END: General */
@@ -16,7 +18,8 @@ html.srcvtx_theme_dark .sidemenu-container {
 /* END: Sidemenu container */
 
 /* INI: Highlight gallery */
-html.srcvtx_theme_dark .hgw_carousel_corner::before {
+html.srcvtx_theme_dark .hgw_carousel_corner::before,
+html.srcvtx_theme_dark .hgw_carousel .hgw_title_container::before {
     border-left: 45px solid #171717;
 }
 
@@ -60,7 +63,7 @@ html.srcvtx_theme_dark nav.navigation .next.page-numbers {
 
 html.srcvtx_theme_dark nav.navigation .prev.page-numbers:hover,
 html.srcvtx_theme_dark nav.navigation .next.page-numbers:hover {
-    color: gray;
+    background-color: #e6c619;   
 }
 
 html.srcvtx_theme_dark .page-numbers.current,
@@ -87,7 +90,9 @@ html.srcvtx_theme_dark .sourcevortex-intern header.post-intern::before {
     border-left: 20px solid #171717;
 }
 
-html.srcvtx_theme_dark .sourcevortex-intern .entry-content.post-sourcevortex > *:not(a,div) {
+html.srcvtx_theme_dark .sourcevortex-intern .entry-content.post-sourcevortex > *:not(a,div),
+html.srcvtx_theme_dark .sourcevortex-intern .entry-content.post-sourcevortex > *:not(a,div) *:not(a,div),
+html.srcvtx_theme_dark .sourcevortex-intern .entry-content.post-sourcevortex > div.wp-block-columns p  {
     color: lightgray;
 }
 
@@ -100,3 +105,27 @@ html.srcvtx_theme_dark .relpost-thumb-wrapper div {
     color: lightgray !important;
 }
 /* END: Post intern */
+
+/* INI: Archive */
+html.srcvtx_theme_dark body.archive header.page-header {
+    border-top: 4px solid #d3d3d3;
+}
+
+html.srcvtx_theme_dark body.archive h1.page-title {
+    color: white;
+}
+/* END: Archive */
+
+/* INI: Search */
+html.srcvtx_theme_dark body.search h1.page-title {
+    color: white;
+}
+
+html.srcvtx_theme_dark body.search div.page-content p {
+    color: #d3d3d3;
+}
+
+html.srcvtx_theme_dark body.search button.search-submit {
+    background-color: #5a5a5a;
+}
+/* END: Search */

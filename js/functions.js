@@ -213,10 +213,24 @@
 		belowEntryMetaClass( 'img.size-full' );
 		belowEntryMetaClass( 'blockquote.alignleft, blockquote.alignright' );
 		belowEntryMetaClass( '.wp-block-image img' );
+
+		var currentTheme = localStorage.getItem( 'srcvtx_theme' );
+
+		$( '#mobile-theme-switch-input' ).prop( 'checked', currentTheme === 'dark' );
 	} );
 
 	$( '.actGoToTop' ).on( 'click', function() {
 		$( 'html, body' ).animate( { scrollTop: 0 }, 'slow' );
 		return false
 	} )
+
+	$( '.actMobileToggleDarkTheme' ).on( 'change', function() {
+		var theme = $( this ).is(":checked") ? 'dark' : 'light';
+
+        $( 'html' ).removeClass( 'srcvtx_theme_dark' );
+        $( 'html' ).removeClass( 'srcvtx_theme_light' );
+        $( 'html' ).addClass( 'srcvtx_theme_' + theme );
+
+        localStorage.setItem('srcvtx_theme', theme);
+	} );
 } )( jQuery );

@@ -22,10 +22,10 @@
 	<script>
 		(function() {
 			var srcVtxTheme = localStorage.getItem('srcvtx_theme');
-			var srcVtxBody = document.querySelector('html');
+			var srcVtxHtml = document.querySelector('html');
 
-			srcVtxBody.classList.remove('srcvtx_theme_light', 'srcvtx_theme_dark');
-			srcVtxBody.classList.add('srcvtx_theme_'+srcVtxTheme);
+			srcVtxHtml.classList.remove('srcvtx_theme_light', 'srcvtx_theme_dark');
+			srcVtxHtml.classList.add('srcvtx_theme_'+srcVtxTheme);
 		})();
 	</script>
 
@@ -96,6 +96,16 @@
 									);
 								?>
 							</nav><!-- .main-navigation -->
+						<?php endif; ?>
+
+						<?php if ( is_user_logged_in() ): ?>
+							<div class="mobile-theme-switcher">
+								<p><?= __( 'Tema escuro', 'twentysixteen' ) ?></p>
+								<label class="srcvtx-switch">
+									<input id="mobile-theme-switch-input" class="actMobileToggleDarkTheme" type="checkbox">
+									<span class="srcvtx-slider"></span>
+								</label>
+							</div>
 						<?php endif; ?>
 					</div>
 				</div>
