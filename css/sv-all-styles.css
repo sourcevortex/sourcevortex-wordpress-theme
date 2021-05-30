@@ -39,6 +39,10 @@ article.line-separator {
 }
 
 .site-content {
+	padding-top: 25px;
+}
+
+body:not(.home) .site-content {
 	padding-top: 60px;
 }
 
