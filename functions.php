@@ -667,7 +667,7 @@ function process_sidemenu_array( $menu_items ) {
 		'entretenimento' => file_get_contents( get_template_directory() . '/img/film-solid.svg' ),
 		'programação' => file_get_contents( get_template_directory() . '/img/code-solid.svg' ),
 		'tecnologia' => file_get_contents( get_template_directory() . '/img/tv-solid.svg' ),
-		'ciência' => file_get_contents( get_template_directory() . '/img/atom-solid.svg' )
+		'ciências' => file_get_contents( get_template_directory() . '/img/atom-solid.svg' )
 	];
 
 	foreach ( $menu_items as $p_menu ) {
