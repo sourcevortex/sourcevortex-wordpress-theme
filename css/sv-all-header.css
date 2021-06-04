@@ -33,6 +33,7 @@ header .only-desktop .search-form {
 }
 
 header .only-desktop input[type="search"].search-field {
+	font-family: 'Montserrat';
 	transition: width 0.2s;
 	width: 0;
 	height: 42px;
