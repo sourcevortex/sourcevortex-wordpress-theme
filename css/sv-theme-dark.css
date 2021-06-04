@@ -129,3 +129,13 @@ html.srcvtx_theme_dark body.search button.search-submit {
     background-color: #5a5a5a;
 }
 /* END: Search */
+
+/* INI: None */
+html.srcvtx_theme_dark .no-results .page-content p {
+    color: white;
+}
+
+html.srcvtx_theme_dark .no-results button.search-submit {
+    background-color: #5a5a5a;
+}
+/* END: None */
