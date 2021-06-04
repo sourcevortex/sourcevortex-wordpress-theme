@@ -6,6 +6,10 @@ body:not(.custom-background-image):after {
 	content: unset;
 }
 
+body .site {
+	margin-bottom: 0;
+}
+
 .site-header-main .social-navigation a {
 	color: white;
 }
