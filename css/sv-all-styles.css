@@ -46,10 +46,6 @@ body:not(.home) .site-content {
 	padding-top: 60px;
 }
 
-.not-found-img {
-	width: 280px;
-}
-
 footer .main-navigation {
 	display: none !important;
 }

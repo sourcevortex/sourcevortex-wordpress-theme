@@ -143,3 +143,9 @@ html.srcvtx_theme_dark .no-results button.search-submit {
     background-color: #5a5a5a;
 }
 /* END: None */
+
+/* INI: 404 */
+html.srcvtx_theme_dark body.error404 h1.page-title {
+    color: white;
+}
+/* END: 404 */
