@@ -126,6 +126,11 @@ button:focus {
 	transform: translateX(26px);
 }
 
+footer#colophon .social-navigation a:hover,
+footer#colophon .social-navigation a:hover::before {
+	color: #e6c619;
+}
+
 /**
  * >= 985px
  */

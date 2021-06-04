@@ -79,10 +79,6 @@ html.srcvtx_theme_dark footer .social-navigation a {
     color: white;
 }
 
-html.srcvtx_theme_dark footer .social-navigation a:hover,
-html.srcvtx_theme_dark footer .social-navigation a:hover::before {
-    color: #e6c619;
-}
 /* END: Pagination */
 
 /* INI: Post intern */
