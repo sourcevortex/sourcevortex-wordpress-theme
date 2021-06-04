@@ -14,6 +14,16 @@
 $this->load_parts( [ 'html-start' ] );
 ?>
 
+<?php if ( defined( 'G_AD_CLIENT' ) && G_AD_CLIENT ): ?>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+
+    <amp-auto-ads type="adsense"
+            data-ad-client="<?php echo G_AD_CLIENT; ?>">
+    </amp-auto-ads>
+<?php endif; ?>
+
 <?php $this->load_parts( [ 'header' ] ); ?>
 
 <style>
