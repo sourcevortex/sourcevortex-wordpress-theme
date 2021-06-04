@@ -90,10 +90,14 @@ html.srcvtx_theme_dark .sourcevortex-intern header.post-intern::before {
     border-left: 20px solid #171717;
 }
 
-html.srcvtx_theme_dark .sourcevortex-intern .entry-content.post-sourcevortex > *:not(a,div),
-html.srcvtx_theme_dark .sourcevortex-intern .entry-content.post-sourcevortex > *:not(a,div) *:not(a,div),
+html.srcvtx_theme_dark .sourcevortex-intern .entry-content.post-sourcevortex > *:not(a,div,.wp-block-code),
+html.srcvtx_theme_dark .sourcevortex-intern .entry-content.post-sourcevortex > *:not(a,div,.wp-block-code) *:not(a,div),
 html.srcvtx_theme_dark .sourcevortex-intern .entry-content.post-sourcevortex > div.wp-block-columns p  {
     color: lightgray;
+}
+
+html.srcvtx_theme_dark .sourcevortex-intern .entry-content.post-sourcevortex > p > code {
+    color: black !important;
 }
 
 html.srcvtx_theme_dark .relpost-block-single {
