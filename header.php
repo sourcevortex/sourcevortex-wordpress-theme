@@ -31,7 +31,7 @@
 
 	<?php wp_head(); ?>
 
-	<?php if ( (GA_UA || G_AD_CLIENT) && !is_page_speed_agent() ): ?>
+	<?php if ( (GA_UA || G_AD_CLIENT) ): ?>
 		<meta http-equiv="x-dns-prefetch-control" content="on" />
 		<link rel="dns-prefetch" href="//pagead2.googlesyndication.com" />
         <link rel="dns-prefetch" href="//securepubads.g.doubleclick.net" />
@@ -54,7 +54,7 @@
         <link rel="preconnect" href="//www.googleads.g.doubleclick.net" />
 	<?php endif; ?>
 
-	<?php if ( GA_UA && !is_page_speed_agent() ): ?>
+	<?php if ( GA_UA ): ?>
 		<!-- Google Analytics -->
 		<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -68,7 +68,7 @@
 		<!-- End Google Analytics -->
 	<?php endif; ?>
 
-	<?php if ( G_AD_CLIENT && !is_page_speed_agent() ): ?>
+	<?php if ( G_AD_CLIENT ): ?>
 		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=<?php echo G_AD_CLIENT ?>"
      crossorigin="anonymous"></script>
 	<?php endif; ?>
