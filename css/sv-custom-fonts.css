@@ -1,9 +1,11 @@
 @font-face {
     font-family: "OriginTech";
+    font-display: swap;
     src: url("../fonts/OriginTech_personal_use.otf") format("opentype");
 }
 
 @font-face {
     font-family: "Asap";
+    font-display: swap;
     src: url("../fonts/Asap-Regular.ttf") format("truetype")
 }
