@@ -15,7 +15,8 @@ $excerpt = strlen( $excerpt ) >= $excerpt_limit
 <div class="hgw_carousel_item">
     <a href="<?= $post_link ?>" class="hgw_anchor_container">
         <div class="hgw_carousel_content_container">
-            <div class="hgw_carousel_img" style="background-image: url(<?= $post_img ?>);">
+            <div class="hgw_carousel_img">
+                <img data-lazy="<?= $post_img ?>" alt="">
                 <div class="hgw_category_box">
                     <p><?php echo strtoupper(SV_HG_DEFAULT_CATEGORY); ?></p>
                 </div>

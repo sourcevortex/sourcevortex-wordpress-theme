@@ -15,8 +15,6 @@
     width: 100%;
     height: 180px;
     overflow: hidden;
-    background-size: cover;
-    background-position: unset;
 }
 
 .hgw_carousel .hgw_category_box {
@@ -113,8 +111,6 @@
 
     .hgw_carousel .hgw_carousel_img {
         height: auto;
-        background-size: cover;
-        background-position: unset;
     }
 
     .hgw_carousel .hgw_category_box {
