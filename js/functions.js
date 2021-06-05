@@ -5,7 +5,7 @@
  * Contains handlers for navigation and widget area.
  */
 
- jQuery.event.special.touchstart = {
+jQuery.event.special.touchstart = {
 	setup: function( _, ns, handle ){
 	  this.addEventListener("touchstart", handle, { passive: true });
 	}

@@ -341,14 +341,6 @@ if ( ! function_exists( 'twentysixteen_fonts_url' ) ) :
 
 		/*
 		 * translators: If there are characters in your language that are not supported
-		 * by Montserrat, translate this to 'off'. Do not translate into your own language.
-		 */
-		if ( 'off' !== _x( 'on', 'Montserrat font: on or off', 'twentysixteen' ) ) {
-			$fonts[] = 'Montserrat:400,700';
-		}
-
-		/*
-		 * translators: If there are characters in your language that are not supported
 		 * by Inconsolata, translate this to 'off'. Do not translate into your own language.
 		 */
 		if ( 'off' !== _x( 'on', 'Inconsolata font: on or off', 'twentysixteen' ) ) {
