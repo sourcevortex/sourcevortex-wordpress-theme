@@ -37,17 +37,16 @@
 
 	<div class="go-to-top-btn actGoToTop" title="Voltar para o topo"></div>
 
-	<!-- <footer class="entry-footer post-sourcevortex"> -->
-		<?php
-			// edit_post_link(
-			// 	sprintf(
-			// 		/* translators: %s: Post title. */
-			// 		__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'twentysixteen' ),
-			// 		get_the_title()
-			// 	),
-			// 	'<span class="edit-link">',
-			// 	'</span>'
-			// );
-			?>
-	<!-- </footer>--><!-- .entry-footer -->
+	<?php
+	$sun_icon = file_get_contents( get_template_directory() . '/img/sun-regular.svg' );
+	$moon_icon = file_get_contents( get_template_directory() . '/img/moon-regular.svg' );
+
+	$sun_title = __( 'Tema claro', 'twentysixteen' );
+	$moon_title = __( 'Tema escuro', 'twentysixteen' );
+	echo "<div class='srcvtx-toggle-theme-post'>";
+	echo 	"<div class='srcvtx-toggle-light actChangeSrcVtxTheme' data-theme='light' title='{$sun_title}'>{$sun_icon}</div>";
+	echo	"<div class='srcvtx-toggle-dark actChangeSrcVtxTheme' data-theme='dark' title='{$moon_title}'>{$moon_icon}</div>";
+	echo "</div>";
+	?>
+
 </article><!-- #post-<?php the_ID(); ?> -->

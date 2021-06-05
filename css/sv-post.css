@@ -111,18 +111,19 @@ body.post-template-default div#page header {
     justify-content: center;
     align-items: center;
     position: fixed;
-    right: 20px;
-    bottom: 20px;
+    right: 10px;
+    bottom: 50px;
     height: 30px;
     width: 30px;
     background-color: black;
     border-radius: 3px;
     cursor: pointer;
     text-align: center;
-   font-size: 23px;
+    font-size: 23px;
 }
  
-.go-to-top-btn:hover {
+.go-to-top-btn:hover,
+.srcvtx-toggle-theme-post:hover {
     box-shadow: 0px 1px 2px 1px #111;
     transition: box-shadow 0.3s;
 }
@@ -132,6 +133,36 @@ body.post-template-default div#page header {
     content:"\f432";
     color: white;
 }
+
+.srcvtx-toggle-theme-post {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    height: 30px;
+    width: 30px;
+    background-color: black;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.srcvtx-toggle-theme-post > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+html.srcvtx_theme_dark .srcvtx-toggle-theme-post .srcvtx-toggle-light {
+    display: flex;
+}
+
+.srcvtx-toggle-theme-post svg {
+    width: 15px;
+    height: 15px;
+}
  
  /**
   * >= 710px
@@ -139,7 +170,12 @@ body.post-template-default div#page header {
 @media screen and (min-width: 44.375em) {
     .go-to-top-btn {
         right: 40px;
-        bottom: 40px;
+        bottom: 60px;
+    }
+
+    .srcvtx-toggle-theme-post {
+        right: 40px;
+        bottom: 20px;
     }
  
     .sourcevortex-intern div.post-sourcevortex {
