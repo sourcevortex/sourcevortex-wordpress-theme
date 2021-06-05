@@ -31,6 +31,29 @@
 
 	<?php wp_head(); ?>
 
+	<?php if ( GA_UA || G_AD_CLIENT ): ?>
+		<meta http-equiv="x-dns-prefetch-control" content="on" />
+		<link rel="dns-prefetch" href="//pagead2.googlesyndication.com" />
+        <link rel="dns-prefetch" href="//securepubads.g.doubleclick.net" />
+        <link rel="dns-prefetch" href="//cm.g.doubleclick.net" />
+        <link rel="dns-prefetch" href="//tpc.googlesyndication.com" />
+        <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="//www.googletagservices.com" />
+        <link rel="dns-prefetch" href="//www.googleadservices.com" />
+        <link rel="dns-prefetch" href="//www.google-analytics.com" />
+        <link rel="dns-prefetch" href="//www.googleads.g.doubleclick.net" />
+
+		<link rel="preconnect" href="//pagead2.googlesyndication.com" />
+        <link rel="preconnect" href="//securepubads.g.doubleclick.net" />
+        <link rel="preconnect" href="//cm.g.doubleclick.net" />
+        <link rel="preconnect" href="//tpc.googlesyndication.com" />
+        <link rel="preconnect" href="//www.googletagmanager.com" />
+        <link rel="preconnect" href="//www.googletagservices.com" />
+        <link rel="preconnect" href="//www.googleadservices.com" />
+        <link rel="preconnect" href="//www.google-analytics.com" />
+        <link rel="preconnect" href="//www.googleads.g.doubleclick.net" />
+	<?php endif; ?>
+
 	<?php if ( GA_UA ): ?>
 		<!-- Google Analytics -->
 		<script>
