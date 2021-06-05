@@ -764,6 +764,13 @@ function inject_tags_after_post( $content ) {
 }
 add_filter( 'the_content', 'inject_tags_after_post' );
 
+function is_page_speed_agent() {
+	if (!isset($_SERVER['HTTP_USER_AGENT']) || stripos($_SERVER['HTTP_USER_AGENT'], 'Speed Insights') === false) {
+		return false;
+	}
+	return true;
+}
+
 /**
  * AMP Tweaks
  */
