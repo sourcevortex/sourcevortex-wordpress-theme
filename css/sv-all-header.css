@@ -72,6 +72,7 @@ header .only-desktop input[type="search"].search-field.toggle-search {
 }
 
 .site-branding .site-title a {
+	font-display: swap;
 	font-family: 'OriginTech';
 	font-weight: normal;
 }
