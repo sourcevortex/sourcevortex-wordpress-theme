@@ -109,6 +109,7 @@ body.post-template-default div#page header {
  
 .go-to-top-btn {
     display: flex;
+    z-index: 120;
     justify-content: center;
     align-items: center;
     position: fixed;
@@ -137,6 +138,7 @@ body.post-template-default div#page header {
 
 .srcvtx-toggle-theme-post {
     position: fixed;
+    z-index: 120;
     right: 10px;
     bottom: 10px;
     height: 30px;
