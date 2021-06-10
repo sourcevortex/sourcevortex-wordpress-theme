@@ -84,7 +84,8 @@ body.post-template-default div#page header {
     padding: 3px 10px;
     border-radius: 45px;
     font-weight: bold;
-    white-space: nowrap;
+    white-space: unset;
+    line-height: 35px;
 }
  
 .sourcevortex-intern .post-sourcevortex .tags-section a:hover {
@@ -213,5 +214,9 @@ html.srcvtx_theme_dark .srcvtx-toggle-theme-post .srcvtx-toggle-light {
         font-size: 20px;
         line-height: 38px;
         font-family: "Asap";
+    }
+
+    .sourcevortex-intern .post-sourcevortex .tags-section a {
+        white-space: nowrap;
     }
 }
