@@ -31,6 +31,8 @@
 
 	<?php wp_head(); ?>
 
+	<meta name="theme-color" content="#000000" />
+
 	<?php if ( (GA_UA || G_AD_CLIENT) ): ?>
 		<meta http-equiv="x-dns-prefetch-control" content="on" />
 		<link rel="dns-prefetch" href="//pagead2.googlesyndication.com" />
