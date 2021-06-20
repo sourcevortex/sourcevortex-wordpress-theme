@@ -611,8 +611,8 @@ add_filter( 'widget_tag_cloud_args', 'twentysixteen_widget_tag_cloud_args' );
  */
 add_action( 'wp_enqueue_scripts', function() {
 	wp_enqueue_style( 'sourcevortex-prism', get_template_directory_uri() . '/css/prism.css', array( 'twentysixteen-style' ), '20210313' );
-	wp_enqueue_style( 'sourcevortex-custom-fonts', get_template_directory_uri() . '/css/sv-custom-fonts.css', array( 'twentysixteen-style' ), '20210403' );
-	wp_enqueue_style( 'sourcevortex-all-styles', get_template_directory_uri() . '/css/sv-all-styles.css', array( 'twentysixteen-style' ), '20210429' );
+	wp_enqueue_style( 'sourcevortex-custom-fonts', get_template_directory_uri() . '/css/sv-custom-fonts.css', array( 'twentysixteen-style' ), '20210620' );
+	wp_enqueue_style( 'sourcevortex-all-styles', get_template_directory_uri() . '/css/sv-all-styles.css', array( 'twentysixteen-style' ), '20210620' );
 	wp_enqueue_style( 'sourcevortex-all-header', get_template_directory_uri() . '/css/sv-all-header.css', array( 'twentysixteen-style', 'sourcevortex-all-styles' ), '20210429' );
 	wp_enqueue_style( 'sourcevortex-sidemenu', get_template_directory_uri() . '/css/sv-sidemenu.css', array( 'twentysixteen-style', 'sourcevortex-all-styles' ), '20210429' );
 	wp_enqueue_style( 'sourcevortex-ads', get_template_directory_uri() . '/css/sv-ads.css', array( 'twentysixteen-style', 'sourcevortex-all-styles' ), '20210429' );
