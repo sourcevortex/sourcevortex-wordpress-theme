@@ -756,6 +756,18 @@ function inject_tags_after_post( $content ) {
 }
 add_filter( 'the_content', 'inject_tags_after_post' );
 
+function capital_meta_title( $title ) {
+	ob_start();
+    bloginfo( 'name' );
+    $blog_name = ob_get_contents();
+    ob_end_clean();
+
+	$title = str_replace( $blog_name, strtoupper( $blog_name ), $title );
+	return $title;
+}
+add_filter( 'wpseo_title', 'capital_meta_title' );
+
+
 /**
  * AMP Tweaks
  */
