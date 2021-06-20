@@ -72,8 +72,9 @@ header .only-desktop input[type="search"].search-field.toggle-search {
 }
 
 .site-branding .site-title a {
-	font-family: 'OriginTech';
+	font-family: 'Inversionz';
 	font-weight: normal;
+	font-size: 1.7rem;
 }
 
 .site-branding .site-title a:active {
@@ -133,10 +134,12 @@ div.mobile-theme-switcher p {
  */
 @media screen and (min-width: 75em) {
 	.site-branding .site-title a {
-		font-size: 2.1rem;
+		font-size: 3.5rem;
 	}
 
 	.site-branding {
 		margin-left: 50px;
+		margin-top: 0;
+		margin-bottom: 0;
 	}
 }
