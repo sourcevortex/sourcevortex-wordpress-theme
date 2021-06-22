@@ -1,6 +1,7 @@
 /* "NEW'S" */
-.single-format-status .site-inner {
+body.single-format-status div#page {
     background-color: #141414;
+    margin: 0;
 }
 
 .single-format-status .content-area {
@@ -82,4 +83,9 @@
 
 .single-format-status .sourcevortex-intern header.post-intern {
     display: block;
+}
+
+.single-format-status .go-to-top-btn,
+.single-format-status .srcvtx-toggle-theme-post {
+    display: none;
 }
