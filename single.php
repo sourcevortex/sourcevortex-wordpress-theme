@@ -72,5 +72,9 @@ get_header(); ?>
 	}
 ?>
 
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+<?php
+	if ( $post_format !== 'status' ) {
+		get_sidebar();
+		get_footer();
+	}
+?>

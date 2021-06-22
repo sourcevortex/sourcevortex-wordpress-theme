@@ -628,6 +628,10 @@ add_action( 'wp_enqueue_scripts', function() {
 		wp_enqueue_style( 'sourcevortex-not-found', get_template_directory_uri() . '/css/sv-not-found.css', array( 'twentysixteen-style', 'sourcevortex-all-styles' ), '20210604' );
 	}
 
+	if ( get_post_format() === 'status' ) {
+		wp_enqueue_style( 'sourcevortex-post-v2', get_template_directory_uri() . '/css/sv-post-v2.css', array( 'twentysixteen-style', 'sourcevortex-all-styles' ), '20210621' );
+	}
+
 	wp_enqueue_script( 'sourcevortex-sidemenu', get_template_directory_uri() . '/js/sv-sidemenu.js', array( 'jquery' ), '20210429', true );
 	wp_enqueue_script( 'sourcevortex-toggle-search', get_template_directory_uri() . '/js/sv-toggle-search.js', array( 'jquery' ), '20210403', true );
 } );
