@@ -120,15 +120,15 @@ if ( ! function_exists( 'twentysixteen_setup' ) ) :
 		add_theme_support(
 			'post-formats',
 			array(
-				'aside',
-				'image',
-				'video',
-				'quote',
-				'link',
-				'gallery',
+				// 'aside',
+				// 'image',
+				// 'video',
+				// 'quote',
+				// 'link',
+				// 'gallery',
 				'status',
-				'audio',
-				'chat',
+				// 'audio',
+				// 'chat',
 			)
 		);
 
