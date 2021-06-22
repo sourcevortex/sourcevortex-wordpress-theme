@@ -21,6 +21,11 @@ get_header(); ?>
 
 			// Include the single post content template.
 			$post_format = get_post_format();
+
+			if (! $post_format ) {
+				$post_format = 'single';
+			}
+
 			get_template_part( 'template-parts/post-formats/content', $post_format );
 
 			// If comments are open or we have at least one comment, load up the comment template.
