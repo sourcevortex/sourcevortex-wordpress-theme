@@ -9,31 +9,38 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'sourcevortex-intern' ); ?>>
-	<div class="post-intern-thumbnail-container">
-		<header class="entry-header post-intern">
-			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-		</header>
+	<div class="post-header-container">
+		<div class="post-intern-thumbnail-container">
+			<?php twentysixteen_post_thumbnail(); ?>
+		</div>
 
-		<?php twentysixteen_post_thumbnail(); ?>
-		<?php twentysixteen_get_first_category() ?>
+		<div class="post-header-informations-box">
+			<div class="post-header-sub-box">
+				<header class="entry-header post-intern">
+					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+				</header>
+			</div>
+		</div>
 	</div>
 
-	<div class="entry-content post-sourcevortex">
-		<?php
-			the_content();
-
-			wp_link_pages(
-				array(
-					'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentysixteen' ) . '</span>',
-					'after'       => '</div>',
-					'link_before' => '<span>',
-					'link_after'  => '</span>',
-					'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'twentysixteen' ) . ' </span>%',
-					'separator'   => '<span class="screen-reader-text">, </span>',
-				)
-			);
-		?>
-	</div><!-- .entry-content -->
+	<div class="post-bottom-container">
+		<div class="entry-content post-sourcevortex">
+			<?php
+				the_content();
+	
+				wp_link_pages(
+					array(
+						'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentysixteen' ) . '</span>',
+						'after'       => '</div>',
+						'link_before' => '<span>',
+						'link_after'  => '</span>',
+						'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'twentysixteen' ) . ' </span>%',
+						'separator'   => '<span class="screen-reader-text">, </span>',
+					)
+				);
+			?>
+		</div><!-- .entry-content -->
+	</div>
 
 	<div class="go-to-top-btn actGoToTop" title="Voltar para o topo"></div>
 

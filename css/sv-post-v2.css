@@ -1,3 +1,85 @@
+/* "NEW'S" */
+.single-format-status .site-inner {
+    background-color: #141414;
+}
+
 .single-format-status .content-area {
     width: 100%;
+}
+
+.single-format-status .post-header-container {
+    position: relative;
+    background-color: #fcc506;
+    width: 100%;
+    height: 300px;
+    margin-top: 200px;
+}
+
+.single-format-status .post-header-container::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-top: 50px solid transparent;
+    border-left: 50px solid #141414;
+    width: 0;
+}
+
+.single-format-status .post-intern-thumbnail-container {
+    position: absolute;
+    width: 950px;
+    height: 350px;
+    overflow: hidden;
+    top: -230px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.single-format-status .post-header-informations-box {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 950px;
+    margin: 0 auto;
+}
+
+.single-format-status .sourcevortex-intern .post-intern.entry-header h1 {
+    color: black;
+}
+
+.single-format-status .post-bottom-container {
+    position: relative;
+    float: none;
+    background-color: white;
+    margin-top: 10px;
+    padding: 60px;
+}
+
+.single-format-status .post-bottom-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom: 50px solid transparent;
+    border-left: 50px solid #141414;
+    width: 0;
+}
+
+/* "REMOVER'S" */
+.single-format-status .sourcevortex-intern header.post-intern {
+    background-color: unset;
+}
+
+.single-format-status .sourcevortex-intern header.post-intern::before {
+    content: unset;
+}
+
+.single-format-status .post-intern-thumbnail-container {
+    border-bottom: unset;
+}
+
+.single-format-status .sourcevortex-intern header.post-intern {
+    display: block;
 }
