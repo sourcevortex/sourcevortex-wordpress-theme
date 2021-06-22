@@ -165,9 +165,10 @@
 
 		<div id="content" class="site-content">
 			<?php
+				$post_format = get_post_format();
 				$post_ad_top = defined( 'POST_AD_TOP' ) ? POST_AD_TOP : '';
 				
-				if ( $post_ad_top && is_single() ) {
+				if ( $post_ad_top && is_single() && $post_format !== 'status' ) {
 					include __DIR__ . "/ads/{$post_ad_top}";
 				}
 			?>

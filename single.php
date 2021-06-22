@@ -67,7 +67,7 @@ get_header(); ?>
 <?php
 	$sticky_ad_footer = defined( 'STICKY_AD_FOOTER' ) ? STICKY_AD_FOOTER : '';
 	
-	if ( $sticky_ad_footer ) {
+	if ( $sticky_ad_footer && $post_format !== 'status' ) {
 		include __DIR__ . "/ads/{$sticky_ad_footer}";
 	}
 ?>
