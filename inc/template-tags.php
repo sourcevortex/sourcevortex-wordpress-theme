@@ -341,3 +341,43 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 		do_action( 'wp_body_open' );
 	}
 endif;
+
+if ( ! function_exists( 'srcvtx_get_categories' ) ) :
+	/**
+	 * Prints HTML with category and tags for current post.
+	 *
+	 * Create your own srcvtx_get_categories() function to override in a child theme.
+	 *
+	 * @since Twenty Sixteen 1.0
+	 */
+	function srcvtx_get_categories() {
+		$categories_list = get_the_category_list( _x( ' ', 'Used between list items, there is a space after the comma.', 'twentysixteen' ) );
+		if ( $categories_list && twentysixteen_categorized_blog() ) {
+			printf(
+				'<span class="cat-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
+				_x( 'Categories', 'Used before category names.', 'twentysixteen' ),
+				$categories_list
+			);
+		}
+	}
+endif;
+
+if ( ! function_exists( 'srcvtx_get_author_and_date' ) ) :
+	/**
+	 * Prints HTML with category and tags for current post.
+	 *
+	 * Create your own srcvtx_get_author_and_date() function to override in a child theme.
+	 *
+	 * @since Twenty Sixteen 1.0
+	 */
+	function srcvtx_get_author_and_date() {
+		printf(
+			'<span class="srcvtx_author_date"><span>%1$s</span><a class="url fn n" href="%2$s"> %3$s</a> %4$s %5$s</span>',
+			_x( 'Por', 'Escrito por', 'twentysixteen' ),
+			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+			get_the_author(),
+			get_the_date('d.m.Y'),
+			get_the_date('H\Hi')
+		);
+	}
+endif;

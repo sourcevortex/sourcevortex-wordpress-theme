@@ -41,12 +41,44 @@ body.single-format-status div#page {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: 10px;
     width: 950px;
     margin: 0 auto;
 }
 
+.single-format-status .post-header-informations-box .srcvtx-category-box {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.single-format-status .post-header-informations-box .srcvtx-category-box .cat-links {
+    display: inline-block;
+    text-align: center;
+    margin: 0 auto;
+    border-top: 5px solid black;
+}
+
+.single-format-status .post-header-informations-box .srcvtx-category-box .cat-links a {
+    color: black;
+}
+
+.single-format-status .post-header-informations-box .srcvtx-category-box .cat-links a:hover {
+    color: white;
+}
+
+.single-format-status .post-header-informations-box .srcvtx_author_date {
+    border-top: 5px solid black;
+    text-transform: uppercase;
+}
+
+.single-format-status .post-header-informations-box .srcvtx_author_date > * {
+    color: black;
+}
+
 .single-format-status .sourcevortex-intern .post-intern.entry-header h1 {
+    margin-bottom: 35px;
     color: black;
 }
 
@@ -65,6 +97,44 @@ body.single-format-status div#page {
     left: 0;
     border-bottom: 50px solid transparent;
     border-left: 50px solid #141414;
+    width: 0;
+}
+
+.single-format-status .post-bottom-container > .entry-content {
+    float: left;
+    width: 65% !important;
+}
+
+.single-format-status .sourcevortex-intern .entry-content.post-sourcevortex > p {
+    font-size: 18px;
+    line-height: 34px;
+}
+
+.single-format-status .post-bottom-container > aside.sidebar {
+    float: right;
+    margin: 0;
+}
+
+.single-format-status .widget {
+    padding-top: 0;
+    background-color: #eeeeee;
+    border-top: unset;
+}
+
+.single-format-status .widget h2 {
+    position: relative;
+    background: #292929;
+    padding: 10px;
+    color: white;
+}
+
+.single-format-status .widget h2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-bottom: 20px solid transparent;
+    border-right: 20px solid white;
     width: 0;
 }
 
@@ -88,4 +158,8 @@ body.single-format-status div#page {
 .single-format-status .go-to-top-btn,
 .single-format-status .srcvtx-toggle-theme-post {
     display: none;
+}
+
+.single-format-status .sourcevortex-intern header.post-intern {
+    padding: 0;
 }

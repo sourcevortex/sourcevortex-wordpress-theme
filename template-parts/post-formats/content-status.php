@@ -15,10 +15,14 @@
 		</div>
 
 		<div class="post-header-informations-box">
+			<div class="srcvtx-category-box">
+				<?php srcvtx_get_categories() ?>
+			</div>
 			<div class="post-header-sub-box">
 				<header class="entry-header post-intern">
 					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 				</header>
+				<?php srcvtx_get_author_and_date(); ?>
 			</div>
 		</div>
 	</div>
@@ -40,6 +44,8 @@
 				);
 			?>
 		</div><!-- .entry-content -->
+		<?php get_sidebar(); ?>
+		<div style="clear:both"></div>
 	</div>
 
 	<div class="go-to-top-btn actGoToTop" title="Voltar para o topo"></div>
