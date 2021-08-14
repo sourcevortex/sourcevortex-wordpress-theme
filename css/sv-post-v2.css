@@ -165,6 +165,41 @@ body.single-format-status div#page {
     margin: 0 20px;
 }
 
+/* See too */
+.single-format-status .relpost-thumb-wrapper > .relpost-thumb-container > h3 {
+    position: relative;
+    padding: 10px 25px;
+    font-family: 'Inversionz';
+    font-size: 36px;
+    background-color: #292929;
+    color: #fac501;
+    text-transform: lowercase;
+}
+
+.single-format-status .relpost-thumb-wrapper > .relpost-thumb-container > h3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid white;
+    width: 0;
+}
+
+.single-format-status .relpost-thumb-wrapper > .relpost-thumb-container,
+.single-format-status .relpost-thumb-wrapper > .relpost-thumb-container .relpost-block-container a {
+    background-color: #eeeeee;
+}
+
+.single-format-status .relpost-thumb-wrapper > .relpost-thumb-container .relpost-block-container a:hover {
+    background-color: #ffffff;
+}
+
+.single-format-status .relpost-thumb-wrapper > .relpost-thumb-container .relpost-block-container {
+    display: flex;
+    justify-content: center;
+}
+
 /* "REMOVER'S" */
 .single-format-status .sourcevortex-intern header.post-intern {
     background-color: unset;
