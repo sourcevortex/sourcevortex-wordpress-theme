@@ -12,7 +12,7 @@ body.single-format-status div#page {
     position: relative;
     background-color: #fcc506;
     width: 100%;
-    height: 300px;
+    height: 400px;
     margin-top: 200px;
 }
 
@@ -41,7 +41,7 @@ body.single-format-status div#page {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 10px;
+    top: 150px;
     width: 950px;
     margin: 0 auto;
 }
@@ -77,8 +77,12 @@ body.single-format-status div#page {
     color: black;
 }
 
+.single-format-status .post-header-informations-box .srcvtx_author_date a:hover {
+    color: white;
+}
+
 .single-format-status .sourcevortex-intern .post-intern.entry-header h1 {
-    margin-bottom: 35px;
+    margin-bottom: 120px;
     color: black;
 }
 
@@ -111,24 +115,43 @@ body.single-format-status div#page {
 }
 
 .single-format-status .post-bottom-container > aside.sidebar {
+    position: relative;
     float: right;
     margin: 0;
 }
 
-.single-format-status .widget {
+.single-format-status aside.sidebar section.widget {
     padding-top: 0;
     background-color: #eeeeee;
     border-top: unset;
 }
 
-.single-format-status .widget h2 {
+.single-format-status aside.sidebar section.widget::before {
+    content: '';
+    position: absolute;
+    width: 75px;
+    height: 5px;
+    background-color: #fac501;
+    top: 0;
+    left: 10px;
+    z-index: 1;
+}
+
+.single-format-status aside.sidebar section.widget h2.widget-title {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    text-shadow: rgba(0,0,0,.01) 0 0 1px;
+    font-family: "Inversionz";
+    font-size: 38px;
     position: relative;
     background: #292929;
     padding: 10px;
-    color: white;
+    color: #fac501;
+    text-transform: lowercase;
 }
 
-.single-format-status .widget h2::before {
+.single-format-status aside.sidebar section.widget h2.widget-title::before {
     content: '';
     position: absolute;
     top: 0;
@@ -136,6 +159,10 @@ body.single-format-status div#page {
     border-bottom: 20px solid transparent;
     border-right: 20px solid white;
     width: 0;
+}
+
+.single-format-status aside.sidebar section.widget > div {
+    margin: 0 20px;
 }
 
 /* "REMOVER'S" */
