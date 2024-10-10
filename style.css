@@ -3815,8 +3815,12 @@ p > video {
  @media screen and (min-width: 90em) {
 	.site-header {
 		top: 20px;
-		width: calc(100% - 2.9%);
+		width: calc(100% - 42px);
 	}
+
+	.logged-in .site-header {
+        top: 53px;
+    }
  }
 
 /**

@@ -15,14 +15,14 @@ $social_menus = add_social_sidemenu( get_menu_items_by_slug( 'social' ) );
                 foreach ( $first_level_menus as $f_menu ) {
                     extract( $f_menu );
                     echo "<p class='sidemenu-icon actOpenDrawer' title='{$flm_title}' data-id='sidemenu_{$flm_id}'>{$flm_icon}</i></p>";
-                } 
+                }
             ?>
         </div>
         <div class="sidemenu-bottom-icons">
             <?php
                 $sun_icon = file_get_contents( get_template_directory() . '/img/sun-regular.svg' );
                 echo "<p class='actChangeSrcVtxTheme srcvtx-toggle-light sidemenu-icon' data-theme='light'>{$sun_icon}</p>";
-                
+
                 $moon_icon = file_get_contents( get_template_directory() . '/img/moon-regular.svg' );
                 echo "<p class='actChangeSrcVtxTheme srcvtx-toggle-dark sidemenu-icon' data-theme='dark'>{$moon_icon}</p>";
 
@@ -30,7 +30,7 @@ $social_menus = add_social_sidemenu( get_menu_items_by_slug( 'social' ) );
                     $sm_title = _('Redes sociais');
                     $sm_icon = file_get_contents( get_template_directory() . '/img/share-alt-square-solid.svg' );
                     echo "<p class='sidemenu-icon actOpenDrawer' title='{$sm_title}' data-id='sidemenu_social'>{$sm_icon}</p>";
-                }                   
+                }
             ?>
         </div>
     </div>
@@ -45,7 +45,7 @@ $social_menus = add_social_sidemenu( get_menu_items_by_slug( 'social' ) );
     ];
 
     $merged_menus = array_merge( $first_level_menus, $social_sidemenu_item );
-    $second_level_menus[ 'social' ] = $social_menus;    
+    $second_level_menus[ 'social' ] = $social_menus;
 
     foreach ( $merged_menus as $f_menu ) {
         extract( $f_menu );
@@ -56,11 +56,13 @@ $social_menus = add_social_sidemenu( get_menu_items_by_slug( 'social' ) );
                 } else {
                     echo "<p class='drawer-title'>{$flm_title}</p>";
                 }
-                
+
                 echo '<div class="drawer-subcategories">';
-                    foreach ( $second_level_menus[ $flm_id ] as $s_menu) {
-                        extract( $s_menu );
-                        echo "<a href='{$slm_url}' target='{$slm_target}' >{$slm_title}</a>";
+                    if ( isset( $second_level_menus[ $flm_id ] ) ) {
+                        foreach ( $second_level_menus[ $flm_id ] as $s_menu) {
+                            extract( $s_menu );
+                            echo "<a href='{$slm_url}' target='{$slm_target}' >{$slm_title}</a>";
+                        }
                     }
                 echo '</div>';
             echo '</div>';

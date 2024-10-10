@@ -10,6 +10,10 @@ body.post-template-default::after {
     content: unset;
 }
 
+body.post-template-default header.site-header {
+    top: 0;
+}
+
 body.post-template-default div#page {
     margin-top: 0;
     margin-bottom: 0;
@@ -50,7 +54,7 @@ body.post-template-default div#page header {
     color: black;
     text-transform: uppercase;
 }
- 
+
 .sourcevortex-intern .post-intern.entry-header h1 {
     font-size: 1.4em;
     color: white;
@@ -74,11 +78,11 @@ body.post-template-default div#page header {
     background-color: black;
     padding: 15px 30px;
 }
- 
+
 .sourcevortex-intern .post-sourcevortex .tags-section {
     margin-bottom: 60px;
 }
- 
+
 .sourcevortex-intern .post-sourcevortex .tags-section a {
     background-color: black;
     padding: 3px 10px;
@@ -87,26 +91,26 @@ body.post-template-default div#page header {
     white-space: unset;
     line-height: 35px;
 }
- 
+
 .sourcevortex-intern .post-sourcevortex .tags-section a:hover {
     color: white;
 }
- 
+
 .sourcevortex-intern .post-sourcevortex .author-info {
     border: 0;
 }
- 
+
 .sourcevortex-intern .post-sourcevortex .author-avatar .avatar {
     margin-top: 10px;
     width: 96px;
     height: 96px;
-} 
- 
+}
+
 .sourcevortex-intern footer.entry-footer.post-sourcevortex {
     margin-top: 120px !important;
     float: none !important;
 }
- 
+
 .go-to-top-btn {
     display: flex;
     z-index: 120;
@@ -123,13 +127,13 @@ body.post-template-default div#page header {
     text-align: center;
     font-size: 23px;
 }
- 
+
 .go-to-top-btn:hover,
 .srcvtx-toggle-theme-post:hover {
     box-shadow: 0px 1px 2px 1px #111;
     transition: box-shadow 0.3s;
 }
- 
+
 .go-to-top-btn::after {
     font-family: 'Genericons';
     content:"\f432";
@@ -166,7 +170,7 @@ html.srcvtx_theme_dark .srcvtx-toggle-theme-post .srcvtx-toggle-light {
     width: 15px;
     height: 15px;
 }
- 
+
  /**
   * >= 710px
   */
@@ -180,12 +184,12 @@ html.srcvtx_theme_dark .srcvtx-toggle-theme-post .srcvtx-toggle-light {
         right: 40px;
         bottom: 20px;
     }
- 
+
     .sourcevortex-intern div.post-sourcevortex {
         margin-right: 7.6923%;
     }
 }
- 
+
  /**
   * >= 985px
   */
@@ -211,7 +215,7 @@ html.srcvtx_theme_dark .srcvtx-toggle-theme-post .srcvtx-toggle-light {
     .sourcevortex-intern .post-intern-thumbnail-container {
         margin-bottom: 75px;
     }
-     
+
     .sourcevortex-intern .entry-content.post-sourcevortex > p {
         font-size: 20px;
         line-height: 38px;
