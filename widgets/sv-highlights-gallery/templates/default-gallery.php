@@ -23,6 +23,8 @@ $excerpt = strlen( $excerpt ) >= $excerpt_limit
                 <div class="hgw_img_gradient"></div>
             </div>
             <div class="hgw_title_container">
+                <div class="hgw_title_first_bg"></div>
+                <div class="hgw_title_second_bg"></div>
                 <p class="hgw_title"><?php the_title() ?></p>
                 <p class="hgw_excerpt"><?= $excerpt; ?></p>
             </div>

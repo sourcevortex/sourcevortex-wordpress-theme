@@ -29,10 +29,42 @@ body.post-template-default div#page header {
     margin: 0;
 }
 
+.sourcevortex-intern .post-intern-thumbnail-background {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+.sourcevortex-intern .post-intern-thumbnail-background::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-top: 36px solid transparent;
+    border-left: 36px solid white;
+    width: 0;
+    z-index: 5;
+}
+
+.sourcevortex-intern .post-intern-thumbnail-background .post-thumbnail-bg-black {
+    position: absolute;
+    top: 0;
+    background-color: black;
+    height: 120px;
+    width: 100%;
+}
+
+.sourcevortex-intern .post-intern-thumbnail-background .post-thumbnail-bg-yellow {
+    position: absolute;
+    top: 120px;
+    background-color: #e6c619;
+    height: 100%;
+    width: 100%;
+}
+
 .sourcevortex-intern .post-intern-thumbnail-container {
     position: relative;
-    border-bottom: 4px solid #e6c619;
-    margin-bottom: 30px;
+    margin: 0 20px;
 }
 
 .sourcevortex-intern .post-intern-thumbnail-container .post-thumbnail {
@@ -44,8 +76,8 @@ body.post-template-default div#page header {
 
 .sourcevortex-intern .post-intern-thumbnail-container .category-box {
     position: absolute;
-    left: 5px;
-    bottom: 0;
+    left: 13px;
+    top: 0;
     font-family: 'Montserrat';
     font-size: 0.8em;
     display: inline-block;
@@ -57,26 +89,27 @@ body.post-template-default div#page header {
 
 .sourcevortex-intern .post-intern.entry-header h1 {
     font-size: 1.4em;
-    color: white;
+    color: black;
     margin-bottom: 0;
-}
-
-.sourcevortex-intern header.post-intern::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-bottom: 20px solid transparent;
-    border-left: 20px solid white;
-    width: 0;
 }
 
 .sourcevortex-intern header.post-intern {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black;
     padding: 15px 30px;
+}
+
+.sourcevortex-intern .post-sourcevortex .post-pre-date {
+    margin-bottom: 15px;
+}
+
+.sourcevortex-intern .post-sourcevortex .post-pre-date span {
+    display: inline-block;
+}
+
+.sourcevortex-intern .post-sourcevortex .post-pre-date span:first-child {
+    margin-right: 20px;
 }
 
 .sourcevortex-intern .post-sourcevortex .tags-section {
@@ -194,26 +227,20 @@ html.srcvtx_theme_dark .srcvtx-toggle-theme-post .srcvtx-toggle-light {
   * >= 985px
   */
 @media screen and (min-width: 61.5625em) {
-    .sourcevortex-intern header.post-intern::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        border-bottom: 20px solid transparent;
-        border-left: 20px solid white;
-        width: 0;
+    .sourcevortex-intern .post-sourcevortex .post-pre-date {
+        margin-left: 34px;
     }
 
     .sourcevortex-intern .post-intern.entry-header h1 {
         margin-bottom: 0;
-        color: white;
+        color: black;
         font-weight: bold;
         font-size: 22px;
         text-transform: uppercase;
     }
 
     .sourcevortex-intern .post-intern-thumbnail-container {
-        margin-bottom: 75px;
+        margin-bottom: 30px;
     }
 
     .sourcevortex-intern .entry-content.post-sourcevortex > p {

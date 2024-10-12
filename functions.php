@@ -601,9 +601,9 @@ add_filter( 'widget_tag_cloud_args', 'twentysixteen_widget_tag_cloud_args' );
 
 /**
  * Custom Tweaks
- * 
- * 
- * 
+ *
+ *
+ *
  */
 
 /**
@@ -655,7 +655,7 @@ function get_menu_items_by_slug( $menu_slug ) {
 
 /**
  * Process sidemenu items from WP Menus
- * 
+ *
  * @param array $menu_items
  */
 function process_sidemenu_array( $menu_items ) {
@@ -680,9 +680,9 @@ function process_sidemenu_array( $menu_items ) {
 			];
 			continue;
 		}
-	
+
 		$slug = str_replace( ' ', '', strtolower( $p_menu->title ) );
-	
+
 		$first_level_menus[] = [
 			'flm_id' => $p_menu->ID,
 			'flm_title' => $p_menu->title,
@@ -696,7 +696,7 @@ function process_sidemenu_array( $menu_items ) {
 
 /**
  * Process sidemenu social items from WP Menus
- * 
+ *
  * @param array $social_items
  */
 function add_social_sidemenu( $social_items ) {

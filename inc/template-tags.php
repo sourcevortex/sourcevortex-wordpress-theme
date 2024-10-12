@@ -103,13 +103,6 @@ if ( ! function_exists( 'twentysixteen_entry_date' ) ) :
 				_x( ', em', '', 'twentysixteen' ),
 				$time_string
 			);
-		} else if ( $inside_post ) {
-			printf(
-				'<span class="posted-on"><span class="screen-reader-text">%1$s </span><a href="%2$s" rel="bookmark">%3$s</a></span>',
-				_x( 'Posted on', 'Used before publish date.', 'twentysixteen' ),
-				esc_url( get_month_link( get_the_date( 'Y' ), get_the_date( 'm' ) ) ),
-				$time_string
-			);
 		} else {
 			return $time_string;
 		}

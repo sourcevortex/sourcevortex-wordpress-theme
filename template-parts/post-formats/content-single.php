@@ -9,16 +9,25 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'sourcevortex-intern' ); ?>>
-	<div class="post-intern-thumbnail-container">
-		<header class="entry-header post-intern">
-			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-		</header>
+    <div class="post-intern-thumbnail-background">
+	    <div class="post-thumbnail-bg-black"></div>
+	    <div class="post-thumbnail-bg-yellow"></div>
 
-		<?php twentysixteen_post_thumbnail(); ?>
-		<?php twentysixteen_get_first_category() ?>
-	</div>
+    	<div class="post-intern-thumbnail-container">
+    		<?php twentysixteen_post_thumbnail(); ?>
+    		<?php twentysixteen_get_first_category() ?>
+
+    		<header class="entry-header post-intern">
+    			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+    		</header>
+    	</div>
+    </div>
 
 	<div class="entry-content post-sourcevortex">
+	    <p class="post-pre-date">
+			<span><?=get_the_date('d\.m\.Y')?></span>
+			<span><?=get_the_date('H\Hi')?></span>
+		</p>
 		<?php
 			the_content();
 

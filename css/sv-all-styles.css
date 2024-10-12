@@ -39,15 +39,15 @@ article.line-separator {
 }
 
 .line-separator-mobile {
-	border-bottom: 2px solid black;
+	border-bottom: 2px solid #e6c619;
 }
 
 .site-content {
-	padding-top: 25px;
+	padding-top: 0;
 }
 
 body:not(.home) .site-content {
-	padding-top: 60px;
+	padding-top: 0;
 }
 
 footer .main-navigation {
@@ -85,7 +85,7 @@ button:focus {
 	height: 34px;
 }
 
-.srcvtx-switch input { 
+.srcvtx-switch input {
 	opacity: 0;
 	width: 0;
 	height: 0;

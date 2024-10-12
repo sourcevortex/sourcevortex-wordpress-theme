@@ -6,9 +6,9 @@ class sv_hgw_widget extends WP_Widget {
 
     function __construct() {
         parent::__construct(
-            'sv_hgw_widget', 
-            __('Highlights Gallery Widget', 'sv_hgw_widget'), 
-            array( 'description' => __( 'Highlights your posts in a Carousel Gallery', 'sv_hgw_widget' ), ) 
+            'sv_hgw_widget',
+            __('Highlights Gallery Widget', 'sv_hgw_widget'),
+            array( 'description' => __( 'Highlights your posts in a Carousel Gallery', 'sv_hgw_widget' ), )
         );
 
         $this->assets_dir = SV_HG_WIDGET_DIR_URL . '/assets';
@@ -30,7 +30,7 @@ class sv_hgw_widget extends WP_Widget {
 
     /**
      * Avoid show highlighted categories
-     * 
+     *
      * @param string $category
      */
     private function modify_homepage_query( $category ) {
@@ -42,7 +42,7 @@ class sv_hgw_widget extends WP_Widget {
                         'taxonomy' => 'category',
                         'field' => 'slug',
                         'terms' => array(
-                            $category 
+                            $category
                         ),
                         'operator'=> 'NOT IN'
                     )
@@ -64,7 +64,7 @@ class sv_hgw_widget extends WP_Widget {
             return false;
         }
     }
-    
+
     /**
      * Frontend widget
      */
@@ -72,7 +72,7 @@ class sv_hgw_widget extends WP_Widget {
         $number_posts = isset( $instance[ 'number_posts' ] ) ? $instance[ 'number_posts' ] : 5;
         $excerpt_limit = isset( $instance[ 'excerpt_limit' ] ) ? $instance[ 'excerpt_limit' ] : 100;
 
-        $this->load_assets();        
+        $this->load_assets();
         $highlighted_posts = $this->get_highlighted_posts( SV_HG_DEFAULT_CATEGORY, $number_posts );
 
         if ( $highlighted_posts && $highlighted_posts->have_posts() ) {
@@ -90,7 +90,7 @@ class sv_hgw_widget extends WP_Widget {
             echo $args['after_widget'];
         }
     }
-            
+
     public function form( $instance ) {
         $number_posts = isset( $instance[ 'number_posts' ] )
             ? $instance[ 'number_posts' ]
@@ -103,11 +103,11 @@ class sv_hgw_widget extends WP_Widget {
 
         include SV_HG_WIDGET_DIR_PATH . '/widget-form.php';
     }
-        
+
     public function update( $new_instance, $old_instance ) {
         $instance = array();
         $instance['number_posts'] = ( ! empty( $new_instance['number_posts'] ) ) ? strip_tags( $new_instance['number_posts'] ) : '';
         $instance['excerpt_limit'] = ( ! empty( $new_instance['excerpt_limit'] ) ) ? strip_tags( $new_instance['excerpt_limit'] ) : '';
         return $instance;
     }
-} 
+}
