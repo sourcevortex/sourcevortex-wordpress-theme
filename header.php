@@ -9,6 +9,8 @@
  * @since Twenty Sixteen 1.0
  */
 
+$tag_manager = defined( TAG_MANAGER ) ? TAG_MANAGER : '';
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
 <head>
@@ -56,6 +58,16 @@
         <link rel="preconnect" href="//www.googleads.g.doubleclick.net" />
 	<?php endif; ?>
 
+    <?php if ( $tag_manager ): ?>
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer',<?= $tag_manager; ?>);</script>
+        <!-- End Google Tag Manager -->
+    <?php endif;?>
+
 	<?php if ( GA_UA ): ?>
 		<!-- Google Analytics -->
 		<script>
@@ -78,6 +90,14 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
+
+<?php if ( $tag_manager ): ?>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?= $tag_manager; ?>"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+<?php endif; ?>
+
 <div id="page" class="site">
 
 	<?php include __DIR__ . "/sidemenu.php"; ?>
@@ -167,7 +187,7 @@
 			<?php
 				$post_format = get_post_format();
 				$post_ad_top = defined( 'POST_AD_TOP' ) ? POST_AD_TOP : '';
-				
+
 				if ( $post_ad_top && is_single() && $post_format !== 'status' ) {
 					include __DIR__ . "/ads/{$post_ad_top}";
 				}
