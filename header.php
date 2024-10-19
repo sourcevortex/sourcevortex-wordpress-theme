@@ -9,7 +9,7 @@
  * @since Twenty Sixteen 1.0
  */
 
-$tag_manager = defined( TAG_MANAGER ) ? TAG_MANAGER : '';
+$tag_manager = defined( 'TAG_MANAGER' ) ? TAG_MANAGER : '';
 
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
