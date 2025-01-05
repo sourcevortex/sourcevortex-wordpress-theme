@@ -46,6 +46,10 @@ body.post-template-default div#page header {
     z-index: 5;
 }
 
+.srcvtx_theme_dark .sourcevortex-intern .post-intern-thumbnail-background::before {
+    border-left: 36px solid #171717;
+}
+
 .sourcevortex-intern .post-intern-thumbnail-background .post-thumbnail-bg-black {
     position: absolute;
     top: 0;
