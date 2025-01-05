@@ -1,7 +1,6 @@
 <?php
 
-$post_ID = $post->ID;
-$post_title = $post->post_title;
+$post_ID = get_the_ID();
 $post_link = get_permalink( $post_ID );
 $post_img = get_the_post_thumbnail_url( $post_ID );
 
