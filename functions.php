@@ -726,16 +726,6 @@ function load_template_part( $template_name, $part_name = null ) {
 }
 
 /**
- * Inject social buttons after the post (depends of: Social Media Feather plugin)
- */
-function inject_social_buttons_after_post( $content ) {
-	$content.= do_shortcode('[feather_share]');
-	$content.= "<div style='margin-bottom: 30px'></div>";
-	return $content;
-}
-add_filter( 'the_content', 'inject_social_buttons_after_post' );
-
-/**
  * Inject the author biography (template part) after post content
  */
 function inject_author_after_post( $content ) {
