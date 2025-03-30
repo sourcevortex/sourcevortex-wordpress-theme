@@ -5,6 +5,7 @@
         arrows: false,
         autoplay: true,
         autoplaySpeed: 5000,
-        lazyLoad: 'ondemand'
+        pauseOnFocus: false,
+        pauseOnHover: false,
     });
 } )( jQuery );
