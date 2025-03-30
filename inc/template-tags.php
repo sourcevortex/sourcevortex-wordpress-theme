@@ -187,7 +187,7 @@ if ( ! function_exists( 'twentysixteen_post_thumbnail' ) ) :
 			?>
 
 		<div class="post-thumbnail">
-			<?php the_post_thumbnail( 'medium_large' ); ?>
+			<?php the_post_thumbnail( 'full' ); ?>
 			<?php twentysixteen_get_first_category() ?>
 		</div><!-- .post-thumbnail -->
 
