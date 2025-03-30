@@ -187,12 +187,14 @@ if ( ! function_exists( 'twentysixteen_post_thumbnail' ) ) :
 			?>
 
 		<div class="post-thumbnail">
-			<?php the_post_thumbnail(); ?>
-	</div><!-- .post-thumbnail -->
+			<?php the_post_thumbnail( 'medium_large' ); ?>
+			<?php twentysixteen_get_first_category() ?>
+		</div><!-- .post-thumbnail -->
 
 	<?php else : ?>
 
 	<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
+		<?php // TODO: change to medium WIP ?>
 		<?php the_post_thumbnail( 'large', array( 'alt' => the_title_attribute( 'echo=0' ) ) ); ?>
 	</a>
 

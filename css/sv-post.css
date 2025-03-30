@@ -24,6 +24,11 @@ body.post-template-default div#page header {
     width: 100%;
 }
 
+div#primary {
+    width: 100%;
+    float: unset;
+}
+
 .sourcevortex-intern header.post-intern {
     padding: 0 7%;
     margin: 0;
@@ -50,15 +55,15 @@ body.post-template-default div#page header {
     border-left: 36px solid #171717;
 }
 
-.sourcevortex-intern .post-intern-thumbnail-background .post-thumbnail-bg-black {
+.sourcevortex-intern .post-intern-thumbnail-background .post-thumbnail-bg-top-mobile {
     position: absolute;
     top: 0;
-    background-color: black;
     height: 120px;
     width: 100%;
+    background-color: black;
 }
 
-.sourcevortex-intern .post-intern-thumbnail-background .post-thumbnail-bg-yellow {
+.sourcevortex-intern .post-intern-thumbnail-background .post-thumbnail-bg {
     position: absolute;
     top: 120px;
     background-color: #e6c619;
@@ -72,23 +77,32 @@ body.post-template-default div#page header {
 }
 
 .sourcevortex-intern .post-intern-thumbnail-container .post-thumbnail {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     background: black;
+    border-bottom: 3px solid black;
 }
 
 .sourcevortex-intern .post-intern-thumbnail-container .category-box {
     position: absolute;
-    left: 13px;
-    top: 0;
+    left: 20px;
+    bottom: 0;
     font-family: 'Montserrat';
-    font-size: 0.8em;
+    font-size: 0.9em;
+    font-weight: 700;
     display: inline-block;
     background-color: #e6c619;
     padding: 3px 10px;
     color: black;
     text-transform: uppercase;
+}
+
+body.post-template-default div#page .sourcevortex-intern header.post-intern {
+    width: 768px;
+    padding: 15px 20px;
+    margin: 0 auto;
 }
 
 .sourcevortex-intern .post-intern.entry-header h1 {
@@ -97,22 +111,47 @@ body.post-template-default div#page header {
     margin-bottom: 0;
 }
 
-.sourcevortex-intern header.post-intern {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 15px 30px;
+.sourcevortex-intern .post-intern.entry-header h2 {
+    font-size: 1.2em;
+    font-weight: 500;
+    color: black;
 }
 
-.sourcevortex-intern .post-sourcevortex .post-pre-date {
-    margin-bottom: 15px;
+.sourcevortex-intern .post-intern-thumbnail-container .post-pre-date {
+    display: none;
+    position: relative;
+    left: 20px;
+    bottom: -10px;
+    width: 768px;
+    margin: 0 auto;
 }
 
-.sourcevortex-intern .post-sourcevortex .post-pre-date span {
+.sourcevortex-intern .post-pre-date-mobile {
+    margin-top: 15px;
+}
+
+.srcvtx_theme_dark .sourcevortex-intern .post-pre-date-mobile {
+    background-color: #171717;
+    color: white;
+}
+
+.sourcevortex-intern .post-intern-thumbnail-container .post-pre-date p {
+    display: inline-block;
+    margin-bottom: 0;
+    background-color: white;
+    padding: 0 10px;
+}
+
+.srcvtx_theme_dark .sourcevortex-intern .post-intern-thumbnail-container .post-pre-date p {
+    background-color: #171717;
+    color: white;
+}
+
+.sourcevortex-intern .post-intern-thumbnail-container .post-pre-date span {
     display: inline-block;
 }
 
-.sourcevortex-intern .post-sourcevortex .post-pre-date span:first-child {
+.sourcevortex-intern .post-intern-thumbnail-container .post-pre-date span:first-child {
     margin-right: 20px;
 }
 
@@ -212,6 +251,15 @@ html.srcvtx_theme_dark .srcvtx-toggle-theme-post .srcvtx-toggle-light {
   * >= 710px
   */
 @media screen and (min-width: 44.375em) {
+    .sourcevortex-intern .post-intern-thumbnail-container .post-thumbnail {
+        width: 768px;
+        margin: 0 auto;
+    }
+
+    .sourcevortex-intern .post-intern-thumbnail-container .post-thumbnail img {
+        height: 530px;
+    }
+
     .go-to-top-btn {
         right: 40px;
         bottom: 60px;
@@ -231,6 +279,28 @@ html.srcvtx_theme_dark .srcvtx-toggle-theme-post .srcvtx-toggle-light {
   * >= 985px
   */
 @media screen and (min-width: 61.5625em) {
+    .sourcevortex-intern .post-intern-thumbnail-background .post-thumbnail-bg-top-mobile {
+        display: none;
+    }
+
+    .sourcevortex-intern .post-intern-thumbnail-background .post-thumbnail-bg {
+        top: 200px;
+    }
+
+    .sourcevortex-intern .post-pre-date-mobile {
+        display: none;
+    }
+
+    .sourcevortex-intern .post-intern-thumbnail-container .post-pre-date {
+        display: block;
+    }
+
+    body article.sourcevortex-intern .entry-content.post-sourcevortex {
+        width: 70%;
+        margin-right: -100%;
+        float: left;
+    }
+
     .sourcevortex-intern .post-sourcevortex .post-pre-date {
         margin-left: 34px;
     }
@@ -244,7 +314,7 @@ html.srcvtx_theme_dark .srcvtx-toggle-theme-post .srcvtx-toggle-light {
     }
 
     .sourcevortex-intern .post-intern-thumbnail-container {
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
 
     .sourcevortex-intern .entry-content.post-sourcevortex > p {

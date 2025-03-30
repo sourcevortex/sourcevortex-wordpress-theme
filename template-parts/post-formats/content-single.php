@@ -10,24 +10,38 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'sourcevortex-intern' ); ?>>
     <div class="post-intern-thumbnail-background">
-	    <div class="post-thumbnail-bg-black"></div>
-	    <div class="post-thumbnail-bg-yellow"></div>
+	    <div class="post-thumbnail-bg-top-mobile"></div>
+	    <div class="post-thumbnail-bg"></div>
 
     	<div class="post-intern-thumbnail-container">
-    		<?php twentysixteen_post_thumbnail(); ?>
-    		<?php twentysixteen_get_first_category() ?>
+			<?php twentysixteen_post_thumbnail(); ?>	
 
     		<header class="entry-header post-intern">
-    			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+    			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>	
+				<?php
+					if ( $subtitle = get_field( "subtitle" )) {
+						echo "<h2>$subtitle</h2>";
+					} 
+				?>
     		</header>
+
+			<div class="post-pre-date">
+				<p>
+					<span><?=get_the_date('d\.m\.Y')?></span>
+					<span><?=get_the_date('H\Hi')?></span>
+				</p>
+			</div>
     	</div>
     </div>
 
 	<div class="entry-content post-sourcevortex">
-	    <p class="post-pre-date">
-			<span><?=get_the_date('d\.m\.Y')?></span>
-			<span><?=get_the_date('H\Hi')?></span>
-		</p>
+		<div class="post-pre-date-mobile">
+			<p>
+				<span><?=get_the_date('d\.m\.Y')?></span>
+				<span><?=get_the_date('H\Hi')?></span>
+			</p>
+		</div>
+
 		<?php
 			the_content();
 
@@ -43,6 +57,12 @@
 			);
 		?>
 	</div><!-- .entry-content -->
+
+	<?php
+		if ( get_post_format() !== 'status' ) {
+			get_sidebar();
+		}
+	?>
 
 	<div class="go-to-top-btn actGoToTop" title="Voltar para o topo"></div>
 

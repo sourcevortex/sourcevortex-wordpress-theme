@@ -74,7 +74,6 @@ get_header(); ?>
 
 <?php
 	if ( $post_format !== 'status' ) {
-		get_sidebar();
 		get_footer();
 	}
 ?>
