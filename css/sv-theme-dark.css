@@ -86,6 +86,8 @@ html.srcvtx_theme_dark .sourcevortex-intern header.post-intern::before {
     border-left: 20px solid #171717;
 }
 
+html.srcvtx_theme_dark .privacy-policy .entry-header > *,
+html.srcvtx_theme_dark .privacy-policy .entry-content > *,
 html.srcvtx_theme_dark .sourcevortex-intern .entry-content.post-sourcevortex > *:not(a,div,.wp-block-code),
 html.srcvtx_theme_dark .sourcevortex-intern .entry-content.post-sourcevortex > *:not(a,div,.wp-block-code) *:not(a,div),
 html.srcvtx_theme_dark .sourcevortex-intern .entry-content.post-sourcevortex > div.wp-block-media-text *,

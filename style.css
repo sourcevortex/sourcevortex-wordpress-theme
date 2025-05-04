@@ -3177,6 +3177,10 @@ p > video {
 		width: 70%;
 	}
 
+	.privacy-policy .content-area {
+		padding-top: 105px;
+	}
+
 	.post-template-default .content-area {
 	   width: 74.5%;
 	}
