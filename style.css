@@ -3822,16 +3822,6 @@ p>video {
 }
 
 /**
- * 14.6 - >= 1440px
- */
-
-@media screen and (min-width: 90em) {
-	.logged-in .site-header {
-		top: 53px;
-	}
-}
-
-/**
  * 15.0 - Print
  */
 

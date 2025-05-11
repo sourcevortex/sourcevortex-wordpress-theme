@@ -10,10 +10,6 @@ body.post-template-default::after {
     content: unset;
 }
 
-body.post-template-default header.site-header {
-    top: 0;
-}
-
 body.post-template-default div#page {
     margin-top: 0;
     margin-bottom: 0;
