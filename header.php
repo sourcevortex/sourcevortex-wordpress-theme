@@ -81,12 +81,16 @@ $tag_manager = defined( 'TAG_MANAGER' ) ? TAG_MANAGER : '';
 
 <div id="page" class="site">
 
-	<?php include __DIR__ . "/sidemenu.php"; ?>
-
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-header-main">
-			<div class="only-desktop sidemenu-icon actOpenSidemenu">
-				<span class="menuicon"></span>
+			<div class="only-desktop theme-icon-container">
+                <?php
+                $sun_icon = file_get_contents( get_template_directory() . '/img/sun-regular.svg' );
+                echo "<button class='actChangeSrcVtxTheme srcvtx-toggle-light theme-icon' data-theme='light'>{$sun_icon}</button>";
+
+                $moon_icon = file_get_contents( get_template_directory() . '/img/moon-regular.svg' );
+                echo "<button class='actChangeSrcVtxTheme srcvtx-toggle-dark theme-icon' data-theme='dark'>{$moon_icon}</button>";
+                ?>
 			</div>
 
 			<div class="only-desktop"></div>
@@ -138,7 +142,23 @@ $tag_manager = defined( 'TAG_MANAGER' ) ? TAG_MANAGER : '';
 			<div class="desktop-search-container only-desktop">
 				<?php get_search_form() ?>
 			</div>
+
 		</div><!-- .site-header-main -->
+
+        <div class="only-desktop svx-main-desktop-menu">
+            <?php if ( has_nav_menu( 'primary' ) ) : ?>
+                <nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'twentysixteen' ); ?>">
+                    <?php
+                    wp_nav_menu(
+                        array(
+                            'theme_location' => 'primary',
+                            'menu_class' => 'primary-menu',
+                        )
+                    );
+                    ?>
+                </nav><!-- .main-navigation -->
+            <?php endif; ?>
+        </div>
 
 		<?php if ( get_header_image() ) : ?>
 			<?php

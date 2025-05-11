@@ -21,7 +21,7 @@
     position: absolute;
     bottom: 0;
     left: 6px;
-    display: inline-block;
+    display: none;
     background: #e6c619;
     padding: 3px 10px;
 }

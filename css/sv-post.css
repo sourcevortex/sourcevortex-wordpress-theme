@@ -1,8 +1,8 @@
 /**
  * 16.3 Post
  */
-:not(body).site-content {
-    padding-top: 30px;
+body.wp-singular :not(body).site-content {
+    padding-top: 111px;
 }
 
 body.post-template-default::before,
@@ -17,11 +17,6 @@ body.post-template-default header.site-header {
 body.post-template-default div#page {
     margin-top: 0;
     margin-bottom: 0;
-}
-
-body.post-template-default div#page header {
-    position: relative;
-    width: 100%;
 }
 
 div#primary {

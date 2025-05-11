@@ -11,12 +11,6 @@ html.srcvtx_theme_dark div.site-inner {
 }
 /* END: General */
 
-/* INI: Sidemenu container */
-html.srcvtx_theme_dark .sidemenu-container {
-    background-color: black;
-}
-/* END: Sidemenu container */
-
 /* INI: Highlight gallery */
 html.srcvtx_theme_dark .hgw_carousel_corner::before,
 html.srcvtx_theme_dark .hgw_carousel .hgw_title_container::before {

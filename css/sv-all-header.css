@@ -10,8 +10,56 @@ header .site-header-menu {
 	z-index: 1;
 }
 
+/* region: theme button */
+div.only-desktop.theme-icon-container {
+	width: 42px;
+	height: 42px;
+}
+
+div.only-desktop.theme-icon-container button {
+	width: inherit;
+	height: inherit;
+	color: white;
+	text-align: center;
+	cursor: pointer;
+	background: #1a1a1a;
+	padding: 3px 0 0 0;
+}
+
+div.only-desktop.theme-icon-container button svg {
+	width: 28px;
+	height: 28px;
+}
+
+html:not(.srcvtx_theme_light) .srcvtx-toggle-light,
+html.srcvtx_theme_light .srcvtx-toggle-light {
+	display: none;
+}
+
+html.srcvtx_theme_dark .srcvtx-toggle-light {
+	display: block;
+}
+
+html.srcvtx_theme_dark .srcvtx-toggle-dark {
+	display: none;
+}
+/* endregion */
+
 .site-header-main .only-mobile.sidemenu-icon {
 	display: flex;
+	width: 42px;
+	height: 42px;
+	justify-content: center;
+	align-items: center;
+	background-color: #1a1a1a;
+	cursor: pointer;
+}
+
+.site-header-main .only-mobile.sidemenu-icon span::before {
+	font-family: "Genericons";
+	content: "\f419";
+	font-size: 24px;
+	color: white;
 }
 
 .site-header-main .only-desktop.sidemenu-icon {
@@ -49,6 +97,20 @@ header .only-desktop input[type="search"].search-field.toggle-search {
 	border: 1px solid #d1d1d1;
 	padding: 0.625em 0.4375em;
 }
+
+/* region: Main menu */
+header .svx-main-desktop-menu {
+	justify-content: center;
+}
+
+header .svx-main-desktop-menu ul.primary-menu > li.menu-item > a {
+	color: #e6c619;
+}
+
+header .svx-main-desktop-menu ul.primary-menu > li.menu-item > a:hover {
+	color: white;
+}
+/* endregion */
 
 .dropdown-toggle {
 	color: white;
@@ -105,9 +167,23 @@ div.mobile-theme-switcher p {
 }
 
 /**
+ * >= 783px
+ */
+
+@media screen and (min-width: 48.9375em) {
+	.site-header {
+		height: 111px;
+	}
+}
+
+/**
  * >= 985px
  */
 @media screen and (min-width: 61.5625em) {
+	header .svx-main-desktop-menu {
+		display: flex;
+	}
+
 	.main-navigation .sub-menu li a {
 		color: black;
 	}
